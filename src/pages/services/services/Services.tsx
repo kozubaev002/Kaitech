@@ -1,9 +1,9 @@
 import styles from "./Services.module.scss";
-import {ServiceCard} from "./ServiceCard.tsx";
-import Icon1 from "../../assets/svg/services1.svg"
-import Icon2 from "../../assets/svg/services2.svg"
-import Icon3 from "../../assets/svg/services3.svg"
-import Icon4 from "../../assets/svg/services4.svg"
+import {ServiceCard} from "../serviceCard/ServiceCard";
+import Icon1 from "../../../assets/svg/services1.svg"
+import Icon2 from "../../../assets/svg/services2.svg"
+import Icon3 from "../../../assets/svg/services3.svg"
+import Icon4 from "../../../assets/svg/services4.svg"
 
 const services = [
     {
@@ -34,6 +34,7 @@ const services = [
 
 export const Services = () => {
     return (
+        <div className="container"> 
         <section className={styles.servicesSection}>
             <div className={styles.servicesContainer}>
                 <h2 className={styles.title}>Что мы предоставляем?</h2>
@@ -49,5 +50,7 @@ export const Services = () => {
                 </div>
             </div>
         </section>
+        </div>
+       
     );
 };

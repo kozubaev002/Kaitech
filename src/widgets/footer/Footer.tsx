@@ -44,7 +44,6 @@ const Footer: React.FC = () => {
             <p>  Телефон: <a href="tel:+996700113095">+996 (700) 113 095</a></p>
           </div>
         </div>
-
       </div>
     </footer>
   );

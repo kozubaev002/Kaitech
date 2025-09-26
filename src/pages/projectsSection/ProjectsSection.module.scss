@@ -8,7 +8,7 @@
   padding: 40px 16px;
 }
 
-.container {
+.containerr {
   max-width: 1000px;
   width: 100%;
   text-align: center;
@@ -105,11 +105,10 @@
   }
 }
 
-/* Телефон үчүн */
 @media (max-width: 600px) {
   .projectsSection {
     padding: 0 13px;
-    margin: 0 auto;
+    margin: 50px auto;
   }
 
   .title {
