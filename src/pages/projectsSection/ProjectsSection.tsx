@@ -10,7 +10,6 @@ export const ProjectsSection: React.FC = () => {
                 className={styles.leftImg}
                 src={leftImg}
                 alt="Счастливый клиент слева"
-                loading="lazy"
             />
             <div className={styles.container}>
                 <h2 className={styles.title}>
@@ -18,7 +17,7 @@ export const ProjectsSection: React.FC = () => {
                 </h2>
                 <p className={styles.description}>
                     Мы KaiTech разрабатываем ПО для автоматизации малых и средних предприятий.
-                    <br />
+                    <br/>
                     Наши продукты помогают ведущим компаниям, а креативные стартапы — важная часть нашей работы.
                 </p>
                 <button className={styles.btn} aria-label="Подробнее о проектах">
@@ -29,7 +28,6 @@ export const ProjectsSection: React.FC = () => {
                 className={styles.rightImg}
                 src={rightImg}
                 alt="Счастливый клиент справа"
-                loading="lazy"
             />
         </section>
     );
