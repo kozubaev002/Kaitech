@@ -1,0 +1,15 @@
+.banner {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 100%;
+        max-width: 1709px;
+        height: auto;
+        display: block;
+        opacity: 1;
+    }
+}
