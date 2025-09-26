@@ -1,8 +1,53 @@
 import React from "react";
 import styles from "./Footer.module.scss";
+import kaitech from "../../assets/image/footerKaitech.png";
+import whatsapp from "../../assets/svg/whatsapp.svg";
+import telegram from "../../assets/svg/telegram.svg";
+import instagram from "../../assets/svg/instagram.svg";
 
 const Footer: React.FC = () => {
-  return <div>Footer</div>;
+  return (
+    <footer className={styles.footer}>
+      <div className={styles.container}>
+
+        <div className={styles.brand}>
+          <div className={styles.logo}>
+            <img src={kaitech} alt="KaiTech логотипи" />
+            <span>KaiTech</span>
+          </div>
+
+          <div className={styles.social}>
+            <a style={{ width: "50px", height: "50px" }} href="https://wa.me/996700113095" aria-label="WhatsApp">
+              <img src={whatsapp} alt="WhatsApp" />
+            </a>
+            <a style={{ width: "48px", height: "48px" }} href="https://t.me/kaitech" aria-label="Telegram">
+              <img src={telegram} alt="Telegram" />
+            </a>
+            <a style={{ width: "40px", height: "40px" }} href="https://instagram.com/kaitech" aria-label="Instagram">
+              <img src={instagram} alt="Instagram" />
+            </a>
+          </div>
+        </div>
+        <nav className={styles.nav}>
+          <h2>Информация</h2>
+          <ul>
+            <li>О нас</li>
+            <li>Наши проекты</li>
+            <li>Услуги</li>
+          </ul>
+        </nav>
+
+        <div className={styles.contacts}>
+          <h2>Контакты</h2>
+          <div>
+            <h3>Кыргызская Республика, 720000 г. Бишкек, ул. Мусы Джалиля 192</h3>
+            <p>  Телефон: <a href="tel:+996700113095">+996 (700) 113 095</a></p>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

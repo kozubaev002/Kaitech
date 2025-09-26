@@ -1,0 +1,154 @@
+.header {
+    width: 100%;
+    height: auto;
+    border: 0.5px solid rgba(216, 108, 44, 1);
+
+    .container {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logoContainer {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 113px;
+                height: auto;
+            }
+
+            h1 {
+                font-family: "Urbanist", sans-serif;
+                font-weight: 700;
+                font-size: 40px;
+                line-height: 1;
+            }
+        }
+
+        .nav {
+            ul {
+                list-style: none;
+                display: flex;
+                gap: 50px;
+
+                li {
+                    font-family: "Comfortaa", sans-serif;
+                    font-weight: 500;
+                    font-size: 20px;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: rgba(216, 108, 44, 1);
+                    }
+                }
+            }
+        }
+
+        button {
+            width: 100%;
+            max-width: 400px;
+            height: 50px;
+            border-radius: 15px;
+            background: rgba(216, 108, 44, 1);
+            border: none;
+            font-family: "Comfortaa", sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+
+    @media (max-width: 789px) {
+        .container {
+            .nav {
+                display: none;
+            }
+
+            .logoContainer {
+                img {
+                    width: 59px;
+                    height: auto;
+                }
+
+                h1 {
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+            }
+
+            button {
+                max-width: 137px;
+                height: 26px;
+                font-size: 10px;
+                font-weight: 400;
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .container {
+            .logoContainer {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                img {
+                    width: 100px;
+                    height: auto;
+                }
+
+                h1 {
+                    font-size: 30px;
+                    line-height: 1.2;
+                }
+            }
+
+            .nav {
+                ul {
+                    list-style: none;
+                    display: flex;
+                    gap: 20px;
+                    padding: 0;
+                    margin: 0;
+
+                    li {
+                        font-family: "Comfortaa", sans-serif;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 1.2;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: rgba(216, 108, 44, 1);
+                        }
+                    }
+                }
+            }
+
+            button {
+                max-width: 160px;
+                height: 45px;
+                font-size: 16px;
+            }
+        }
+    }
+
+    @media (max-width: 1187px) and (min-width:1025px) {
+        .container {
+            .nav {
+                ul {
+                    gap: 20px;
+                }
+            }
+
+            button{
+                max-width: 300px;
+            }
+        }
+    }
+}
