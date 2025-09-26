@@ -1,0 +1,97 @@
+.card {
+  max-width: 330px;
+  width: 100%;
+  height: 416px;
+  border-radius: 20px;
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.17);
+  background: rgba(255, 255, 255, 1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.title {
+  color: rgba(0, 0, 0, 1);
+  font-size: 24px;
+  font-weight: 500;
+  margin: 36px auto;
+}
+
+.description {
+  color: rgba(0, 0, 0, 1);
+  font-size: 20px;
+  font-weight: 500;
+  margin: 30px 1px 37px;
+}
+
+@media (max-width: 1240px) {
+  .description {
+    margin: 15px auto;
+  }
+}
+
+@media (max-width: 1024px) {
+ .card {
+   height: auto;
+   padding: 10px;
+ }
+
+ .title {
+   font-size: 20px;
+   margin: 15px auto;
+ }
+
+  .icon {
+    width: 70px;
+  }
+
+  .description {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15),0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    background: var(--primary inv text, rgba(255, 255, 255, 1));
+  }
+
+  .icon {
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .icon {
+    width: 80px;
+  }
+
+  .description {
+    font-size: 10px;
+    font-weight: 400;
+    text-align: left;
+    margin: -10px auto 0;
+  }
+}

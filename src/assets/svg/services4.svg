@@ -1,0 +1,5 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100.000000" height="100.000000" fill="none">
+    <rect id="user" width="100.000000" height="100.000000" x="0.000000" y="0.000000" fill="rgb(255,255,255)" fill-opacity="0" />
+    <path id="Vector" d="M83.3333 87.5L83.3333 79.1667C83.3333 74.7464 81.5773 70.5072 78.4517 67.3816C75.3261 64.256 71.0869 62.5 66.6666 62.5L33.3333 62.5C28.913 62.5 24.6738 64.256 21.5482 67.3816C18.4226 70.5072 16.6666 74.7464 16.6666 79.1667L16.6666 87.5" fill-rule="nonzero" stroke="rgb(216,108,44)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+    <path id="Vector" d="M50 45.8333C40.7953 45.8333 33.3334 38.3714 33.3334 29.1667C33.3334 19.9619 40.7953 12.5 50 12.5C59.2048 12.5 66.6667 19.9619 66.6667 29.1667C66.6667 38.3714 59.2048 45.8333 50 45.8333Z" stroke="rgb(216,108,44)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+</svg>
