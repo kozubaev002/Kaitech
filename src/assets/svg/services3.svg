@@ -1,0 +1,6 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100.000000" height="100.000000" fill="none">
+    <rect id="monitor" width="100.000000" height="100.000000" x="0.000000" y="0.000000" fill="rgb(255,255,255)" fill-opacity="0" />
+    <path id="Vector" d="M83.3333 12.5C87.9357 12.5 91.6667 16.231 91.6667 20.8333L91.6667 62.5C91.6667 67.1024 87.9357 70.8333 83.3333 70.8333L16.6666 70.8333C12.0643 70.8333 8.33331 67.1024 8.33331 62.5L8.33331 20.8333C8.33331 16.231 12.0643 12.5 16.6666 12.5L83.3333 12.5Z" stroke="rgb(216,108,44)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+    <path id="Vector" d="M33.3333 87.5L66.6666 87.5" stroke="rgb(216,108,44)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+    <path id="Vector" d="M0 0L16.6667 0" stroke="rgb(216,108,44)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="matrix(0,1,-1,0,50,70.8334)" />
+</svg>
