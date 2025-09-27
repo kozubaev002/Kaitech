@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.scss";
-import kaitech from "../../assets/image/footerKaitech.png";
+import kaitech from "../../assets/image/kaitech-logo.png";
 import whatsapp from "../../assets/svg/whatsapp.svg";
 import telegram from "../../assets/svg/telegram.svg";
 import instagram from "../../assets/svg/instagram.svg";
@@ -28,6 +28,7 @@ const Footer: React.FC = () => {
             </a>
           </div>
         </div>
+
         <nav className={styles.nav}>
           <h2>Информация</h2>
           <ul>
@@ -42,6 +43,25 @@ const Footer: React.FC = () => {
           <div>
             <h3>Кыргызская Республика, 720000 г. Бишкек, ул. Мусы Джалиля 192</h3>
             <p>  Телефон: <a href="tel:+996700113095">+996 (700) 113 095</a></p>
+          </div>
+        </div>
+
+        <div className={styles.adaptivka}>
+          <nav className={styles.nav2}>
+            <h2>Информация</h2>
+            <ul>
+              <li>О нас</li>
+              <li>Наши проекты</li>
+              <li>Услуги</li>
+            </ul>
+          </nav>
+
+          <div className={styles.contacts2}>
+            <h2>Контакты</h2>
+            <div>
+              <h3>Кыргызская Республика, 720000 г. Бишкек, ул. Мусы Джалиля 192</h3>
+              <p>  Телефон: <a href="tel:+996700113095">+996 (700) 113 095</a></p>
+            </div>
           </div>
         </div>
       </div>
