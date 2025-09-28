@@ -35,14 +35,14 @@ const services = [
 export const Services = () => {
     return (
         <div className="container"> 
-        <section className={styles.servicesSection}>
+        <section className={styles.servicesSection} aria-labelledby="services-title">
             <div className={styles.servicesContainer}>
-                <h2 className={styles.title}>Что мы предоставляем?</h2>
+                <h2 id="services-title" className={styles.title}>Что мы предоставляем?</h2>
                 <div className={styles.cardsWrapper}>
                     {services.map((service) => (
                         <ServiceCard
                             key={service.id}
-                            icon={service.icon}
+                            icon={service.icon} 
                             title={service.title}
                             description={service.description}
                         />

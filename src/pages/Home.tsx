@@ -10,7 +10,6 @@ const Home: React.FC = () => {
             <Banner />
             <ProjectsSection />
             <Services />
-            <Team/>
         </div>
     );
 };
