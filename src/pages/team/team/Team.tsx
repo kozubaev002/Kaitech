@@ -1,9 +1,9 @@
-
 import React from "react";
 import styles from "./Team.module.scss";
 import Img from "../../../assets/image/imageStudents.png";
 
-const placeholder = "https://www.nicepng.com/png/detail/136-1366211_group-of-10-guys-login-user-icon-png.png";
+const placeholder =
+    "https://www.nicepng.com/png/detail/136-1366211_group-of-10-guys-login-user-icon-png.png";
 
 const teamMembers = [
     {id: 1, name: "", role: "", photo: ""},
