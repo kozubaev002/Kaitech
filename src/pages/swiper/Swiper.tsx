@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Swiper.module.scss";
 import Img from "../../assets/image/imageStudents.png";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, Navigation} from "swiper/modules";
 
 import "swiper/css";
@@ -32,7 +32,7 @@ const SwiperDemo: React.FC = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className={styles.slide}>
-                        <img src={Img} alt="Student" />
+                        <img src={Img} alt="Student"/>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
