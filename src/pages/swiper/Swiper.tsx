@@ -1,25 +1,25 @@
 import React from "react";
 import styles from "./Swiper.module.scss";
-import Img from "../../assets/image/imageStudents.png";
+import img from "../../assets/image/imageStudents.png";
 
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Autoplay, Navigation} from "swiper/modules";
+import {Autoplay} from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
 
 const SwiperDemo: React.FC = () => {
     return (
-        <div className={styles.swiperContainer}>
+        <div className="container">
+        <section className={styles.swiperContainer} aria-label="Наши проекты">
             <h2 className={styles.title}>Наши проекты</h2>
             <Swiper
-                navigation={true}
                 autoplay={{
                     delay: 2500,
                     disableOnInteraction: false,
                 }}
-                modules={[Navigation, Autoplay]}
-                slidesPerView={1.4}
+                modules={[Autoplay]}
+                slidesPerView={1.6}
                 spaceBetween={20}
                 centeredSlides={true}
                 loop={true}
@@ -32,7 +32,7 @@ const SwiperDemo: React.FC = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className={styles.slide}>
-                        <img src={Img} alt="Student"/>
+                        <img src={img} alt="Student" loading="lazy"/>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
@@ -42,6 +42,7 @@ const SwiperDemo: React.FC = () => {
                     <div className={styles.slide}>5</div>
                 </SwiperSlide>
             </Swiper>
+        </section>
         </div>
     );
 };

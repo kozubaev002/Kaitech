@@ -1,16 +1,17 @@
 import React from "react";
 import styles from "./Team.module.scss";
-import Img from "../../../assets/image/imageStudents.png";
+import img from "../../assets/image/imageStudents.png"
+import img2 from "../../assets/image/imageAgai.png"
 
 const placeholder =
     "https://www.nicepng.com/png/detail/136-1366211_group-of-10-guys-login-user-icon-png.png";
 
 const teamMembers = [
-    {id: 1, name: "", role: "", photo: ""},
-    {id: 2, name: "", role: "", photo: Img},
-    {id: 3, name: "", role: "", photo: ""},
-    {id: 4, name: "", role: "", photo: ""},
-    {id: 5, name: "", role: "", photo: ""},
+    { id: 1, name: "", role: "", photo: img },
+    { id: 2, name: "Nursultan Ulan uulu", role: "Agai", photo: img2 },
+    { id: 3, name: "", role: "", photo: "" },
+    { id: 4, name: "", role: "", photo: "" },
+    { id: 5, name: "", role: "", photo: "" },
 ];
 
 export const Team: React.FC = () => {
@@ -50,7 +51,14 @@ export const Team: React.FC = () => {
                     карьеру с KaiTech - теперь очередь за вами.
                 </p>
 
-                <button className={styles.joinButton}>Присоединиться</button>
+                <button
+                    type="button"
+                    className={styles.joinButton}
+                    aria-label="Присоединиться к команде KaiTech"
+                >
+                    Присоединиться
+                </button>
+
             </div>
         </section>
     );
