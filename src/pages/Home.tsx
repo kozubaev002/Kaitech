@@ -5,6 +5,7 @@ import { Services } from "./services/services/Services.tsx";
 import { Team } from "../pages/team/Team.tsx"
 import CompanyKgz from "./companyKGZ/CompanyKgz.tsx";
 import Swiper from "./swiper/Swiper.tsx";
+import {MapLocation} from "./mapLocation/MapLocation.tsx";
 
 const Home: React.FC = () => {
     return (
@@ -15,6 +16,7 @@ const Home: React.FC = () => {
             <Swiper />
             <Team />
             <CompanyKgz />
+            <MapLocation/>
         </div>
     );
 };
