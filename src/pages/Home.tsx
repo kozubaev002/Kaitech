@@ -6,6 +6,7 @@ import { Team } from "../pages/team/Team.tsx"
 import CompanyKgz from "./companyKGZ/CompanyKgz.tsx";
 import ContactForm from "./contactForm/ContactForm.tsx";
 import Swiper from "./swiper/Swiper.tsx";
+import {MapLocation} from "./mapLocation/MapLocation.tsx";
 import Wave from "./wave/Wave.tsx";
 
 const Home: React.FC = () => {
@@ -17,6 +18,7 @@ const Home: React.FC = () => {
             <Swiper />
             <Team />
             <CompanyKgz />
+            <MapLocation/>
             <Wave/>
             <ContactForm />
         </div>

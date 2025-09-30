@@ -1,0 +1,35 @@
+.mapWrapper {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 110px 0 60px;
+  color: #333;
+  text-align: center;
+}
+
+.mapContainer {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 0.4;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 48px auto 30px;
+  }
+}
