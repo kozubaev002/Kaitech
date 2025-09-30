@@ -7,6 +7,7 @@ import CompanyKgz from "./companyKGZ/CompanyKgz.tsx";
 import ContactForm from "./contactForm/ContactForm.tsx";
 import Swiper from "./swiper/Swiper.tsx";
 import Wave from "./wave/Wave.tsx";
+import {BlockAchievements} from "./blockAchievements/BlockAchievements.tsx";
 import {MapLocation} from "./mapLocation/MapLocation.tsx";
 
 const Home: React.FC = () => {
@@ -17,6 +18,7 @@ const Home: React.FC = () => {
             <Services />
             <Swiper />
             <Team />
+            <BlockAchievements/>
             <CompanyKgz />
             <Wave/>
             <ContactForm />
