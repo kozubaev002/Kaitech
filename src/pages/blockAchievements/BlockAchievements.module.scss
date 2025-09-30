@@ -1,0 +1,62 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  margin: 110px auto;
+}
+
+.mySwiper {
+  width: 100%;
+  max-width: 735px;
+  height: auto;
+  border-radius: 15px;
+  aspect-ratio: 2 / 1.2;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+}
+
+.textBlock {
+  width: 90%;
+  font-size: 2.4vw;
+  line-height: 3vw;
+
+  b {
+    color: #D86C2C;
+  }
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    gap: 30px;
+    margin: 70px auto;
+  }
+
+  .mySwiper {
+    border-radius: 10px;
+
+    img {
+      border-radius: 10px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    gap: 10px;
+    margin: 0 auto 30px;
+
+    .mySwiper {
+      border-radius: 5px;
+
+      img {
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
