@@ -3,7 +3,7 @@ import styles from "./MapLocation.module.scss";
 
 export const MapLocation: React.FC = () => {
     return (
-        <div className={"container"}>
+        <div className="container">
             <h2 className={styles.title}>Наше местоположение</h2>
             <div className={styles.mapContainer}>
                 <iframe

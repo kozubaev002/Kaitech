@@ -17,7 +17,6 @@
 
 .title {
   color: var(--main, rgba(216, 108, 44, 1));
-  font-family: "Comfortaa", cursive;
   font-size: clamp(28px, 5vw, 64px);
   font-weight: 700;
   margin: 0 auto;
@@ -27,7 +26,6 @@
 
 .description {
   color: rgba(0, 0, 0, 1);
-  font-family: "Comfortaa", cursive;
   font-size: clamp(16px, 3vw, 32px);
   font-weight: 400;
   line-height: 140%;
