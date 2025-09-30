@@ -1,12 +1,10 @@
 .contactSection {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   gap: 60px;
-  padding: 60px;
-  font-family: 'Inter', sans-serif;
   color: #1f1f1f;
   margin-top: -100px;
+  padding: 60px;
 }
 
 .info {
@@ -16,7 +14,7 @@
 
 .title {
   width: 100%;
-  max-width: 400px;
+  max-width: auto;
   color: var(--main, rgba(216, 108, 44, 1));
   font-size: 32px;
   font-weight: 600;
@@ -61,6 +59,23 @@
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: var(--Corner-Large, 16px);
   box-shadow: 0 6px 17px 0 rgba(0, 0, 0, 0.25);
+
+  h2 {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 0%;
+    color: var(--Text-Default, rgba(33, 33, 33, 1));
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+
+  }
 }
 
 .formTitle {
@@ -79,7 +94,8 @@
   margin-top: -10px;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   max-width: 400px;
   height: 48px;
@@ -115,9 +131,9 @@ button {
 
 @media (max-width: 768px) {
   .contactSection {
-    flex-direction: column;
-    padding: 30px;
     gap: 30px;
+    justify-content: center;
+    padding: 30px;
   }
 
   .info {
@@ -125,19 +141,25 @@ button {
   }
 
   .form {
-    width: 100%;
-    max-width: 100%;
+    h2 {
+      font-weight: 400;
+      font-size: 19px;
+      line-height: 100%;
+      letter-spacing: 0%;
+    }
+
+    p {
+      font-size: 12px;
+    }
   }
 
   .formTitle {
     font-size: 28px;
   }
 
-  .p {
-    font-size: 14px;
-  }
-
-  input, textarea, button {
+  input,
+  textarea,
+  button {
     font-size: 14px;
     height: 45px;
   }
@@ -145,5 +167,16 @@ button {
   textarea {
     font-size: 14px;
     line-height: 20px;
+  }
+}
+
+@media (max-width:480px) {
+  .contactSection {
+    padding: 15px;
+  }
+
+  .form {
+    padding: 20px;
+    height: 350px;
   }
 }
