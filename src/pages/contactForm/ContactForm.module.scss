@@ -1,0 +1,149 @@
+.contactSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  padding: 60px;
+  font-family: 'Inter', sans-serif;
+  color: #1f1f1f;
+  margin-top: -100px;
+}
+
+.info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.title {
+  width: 100%;
+  max-width: 400px;
+  color: var(--main, rgba(216, 108, 44, 1));
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.list {
+  list-style: none;
+  color: var(--secondary text, rgba(21, 24, 26, 0.7));
+  font-weight: 500;
+  text-align: left;
+
+  li {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+}
+
+.chatsTitle {
+  color: var(--main, rgba(216, 108, 44, 1));
+  font-size: 36px;
+  font-weight: 700;
+  margin: 30px 0;
+}
+
+.chatsInfo {
+  width: 100%;
+  max-width: 470px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.form {
+  width: 470px;
+  max-width: 100%;
+  background: #fff;
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: var(--Corner-Large, 16px);
+  box-shadow: 0 6px 17px 0 rgba(0, 0, 0, 0.25);
+}
+
+.formTitle {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.p {
+  width: 100%;
+  max-width: 330px;
+  color: var(--secondary text, rgba(21, 24, 26, 0.7));
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+  margin-top: -10px;
+}
+
+input, textarea {
+  width: 100%;
+  max-width: 400px;
+  height: 48px;
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+textarea {
+  color: var(--Text_color-secondary_text, rgba(23, 24, 26, 0.7));
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+button {
+  width: 100%;
+  max-width: 400px;
+  height: 50px;
+  border-radius: 15px;
+  background: var(--main, rgba(216, 108, 44, 1));
+  color: rgba(255, 255, 255, 1);
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken(#f2794b, 10%);
+  }
+}
+
+@media (max-width: 768px) {
+  .contactSection {
+    flex-direction: column;
+    padding: 30px;
+    gap: 30px;
+  }
+
+  .info {
+    display: none;
+  }
+
+  .form {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .formTitle {
+    font-size: 28px;
+  }
+
+  .p {
+    font-size: 14px;
+  }
+
+  input, textarea, button {
+    font-size: 14px;
+    height: 45px;
+  }
+
+  textarea {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

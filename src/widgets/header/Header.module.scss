@@ -63,33 +63,6 @@
         }
     }
 
-    @media (max-width: 789px) {
-        .container {
-            .nav {
-                display: none;
-            }
-
-            .logoContainer {
-                img {
-                    width: 59px;
-                    height: auto;
-                }
-
-                h1 {
-                    font-size: 16px;
-                    font-weight: 700;
-                }
-            }
-
-            button {
-                max-width: 137px;
-                height: 26px;
-                font-size: 10px;
-                font-weight: 400;
-            }
-        }
-    }
-
     @media (max-width: 1024px) {
         .container {
             .logoContainer {
@@ -148,6 +121,33 @@
 
             button {
                 max-width: 300px;
+            }
+        }
+    }
+
+    @media (max-width: 789px) {
+        .container {
+            .nav {
+                display: none;
+            }
+
+            .logoContainer {
+                img {
+                    width: 70px;
+                    height: auto;
+                }
+
+                h1 {
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+            }
+
+            button {
+                max-width: 137px;
+                height: 26px;
+                font-size: 12px;
+                font-weight: 400;
             }
         }
     }
