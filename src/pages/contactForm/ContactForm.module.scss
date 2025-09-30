@@ -6,7 +6,7 @@
   padding: 60px;
   font-family: 'Inter', sans-serif;
   color: #1f1f1f;
-  flex-wrap: wrap; // для адаптивки
+  margin-top: -100px;
 }
 
 .info {
@@ -106,13 +106,13 @@ button {
   color: rgba(255, 255, 255, 1);
   font-size: 18px;
   font-weight: 400;
+  cursor: pointer;
 
   &:hover {
     background-color: darken(#f2794b, 10%);
   }
 }
 
-/* Адаптивка для мобильных */
 @media (max-width: 768px) {
   .contactSection {
     flex-direction: column;
@@ -121,7 +121,7 @@ button {
   }
 
   .info {
-    display: none; // скрываем блок на мобильных
+    display: none;
   }
 
   .form {

@@ -1,0 +1,24 @@
+.waveContainer {
+  margin-bottom: 100px;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 20px;
+
+
+  // Телефон (макс. 768px)
+  @media (max-width: 768px) {
+    height: 70px; 
+
+  }
+
+  @media (max-width: 480px) {
+    height: 30px; 
+  }
+}
+
+.waveSvg {
+  width: 100%;
+  height: 100%;
+}

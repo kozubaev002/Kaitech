@@ -8,19 +8,24 @@ const ContactForm: React.FC = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log({ name, phone, message });
-        // Здесь можно добавить отправку на API
-    };
 
+        const formData = { name, phone, message };
+
+        console.log("Форма жөнөтүлдү:", formData);
+
+        setName("");
+        setPhone("");
+        setMessage("");
+    };
     const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const onlyLetters = e.target.value.replace(/[^а-яА-Яa-zA-Z\s]/g, "");
         setName(onlyLetters);
     };
 
     const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        let digits = e.target.value.replace(/\D/g, ""); // оставляем только цифры
-        if (digits.startsWith("996")) digits = digits.slice(3); // убираем код, если пользователь его ввел
-        if (digits.length > 9) digits = digits.slice(0, 9); // максимум 9 цифр после кода
+        let digits = e.target.value.replace(/\D/g, "");
+        if (digits.startsWith("996")) digits = digits.slice(3);
+        if (digits.length > 9) digits = digits.slice(0, 9);
 
         let formatted = "+996 ";
         if (digits.length > 0) formatted += "(" + digits.slice(0, Math.min(3, digits.length));
@@ -32,7 +37,7 @@ const ContactForm: React.FC = () => {
 
     return (
         <div className="container">
-            <section className={styles.contactSection}>
+            <section className={styles.contactSection} aria-label="Форма для связи с компанией KaiTech">
                 <div className={styles.info}>
                     <p className={styles.title}>Оставьте данные и мы свяжемся с Вами</p>
                     <ul className={styles.list}>
@@ -56,6 +61,7 @@ const ContactForm: React.FC = () => {
 
                     <input
                         type="text"
+                        name="name"
                         value={name}
                         onChange={handleNameChange}
                         required
@@ -64,10 +70,12 @@ const ContactForm: React.FC = () => {
 
                     <input
                         type="tel"
+                        name="phone"
                         value={phone}
                         onChange={handlePhoneChange}
                         required
                         placeholder={"+996 (___)-___-___"}
+                        pattern="\+996\s\(\d{3}\)-\d{3}-\d{3}"
                     />
 
                     <textarea
@@ -77,7 +85,10 @@ const ContactForm: React.FC = () => {
                         placeholder={"Ваше сообщение"}
                     />
 
-                    <button type="submit">Отправить</button>
+                    <button type="submit" aria-label="Отправить форму обратной связи">
+                        Отправить
+                    </button>
+
                 </form>
             </section>
         </div>

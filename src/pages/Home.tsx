@@ -6,6 +6,7 @@ import { Team } from "../pages/team/Team.tsx"
 import CompanyKgz from "./companyKGZ/CompanyKgz.tsx";
 import ContactForm from "./contactForm/ContactForm.tsx";
 import Swiper from "./swiper/Swiper.tsx";
+import Wave from "./wave/Wave.tsx";
 
 const Home: React.FC = () => {
     return (
@@ -13,11 +14,11 @@ const Home: React.FC = () => {
             <Banner />
             <ProjectsSection />
             <Services />
-            <CompanyKgz/>
-            <ContactForm/>
             <Swiper />
             <Team />
             <CompanyKgz />
+            <Wave/>
+            <ContactForm />
         </div>
     );
 };
