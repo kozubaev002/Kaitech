@@ -9,7 +9,7 @@
 .mapContainer {
   width: 92%;
   margin: auto;
-  height: 430px;
+  height: 100%;
   aspect-ratio: 1 / 0.4;
   border-radius: 12px;
   overflow: hidden;
@@ -19,6 +19,10 @@
 @media (max-width: 768px) {
   .title {
     font-size: 28px;
+  }
+
+  .mapContainer{
+    height: 100%;
   }
 }
 

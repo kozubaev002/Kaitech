@@ -52,8 +52,7 @@ const ContactForm: React.FC = () => {
                         required
                         placeholder="Ваше имя"
                     />
-
-                    <PhoneInput
+                          <PhoneInput
                         country={""}
                         value={phone}
                         onChange={setPhone}
@@ -63,6 +62,8 @@ const ContactForm: React.FC = () => {
                             required: true,
                         }}
                         placeholder="Номер телефона"
+                        containerClass={styles.phoneContainer}
+                        inputClass={styles.phoneInput}
                     />
 
                     <textarea

@@ -21,12 +21,21 @@
 }
 
 .textBlock {
-  width: 90%;
-  font-size: 2.4vw;
-  line-height: 3vw;
+  width: 100%;
+  font-size: 40px;
+  font-weight: 400;
 
   b {
     color: #D86C2C;
+  }
+}
+
+@media (max-width: 1100px) {
+  .wrapper {
+
+    .textBlock {
+      font-size: 30px;
+    }
   }
 }
 
@@ -34,6 +43,10 @@
   .wrapper {
     gap: 30px;
     margin: 70px auto;
+  }
+
+  .textBlock {
+    width: 100%;
   }
 
   .mySwiper {
@@ -45,10 +58,23 @@
   }
 }
 
+@media (max-width: 880px) {
+  .wrapper {
+
+    .textBlock {
+      font-size: 25px;
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .wrapper {
     gap: 10px;
     margin: 0 auto 30px;
+
+    .textBlock {
+      font-size: 20px;
+    }
 
     .mySwiper {
       border-radius: 5px;
@@ -60,3 +86,21 @@
   }
 }
 
+@media (max-width: 580px) {
+  .wrapper {
+    .textBlock {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .wrapper {
+    gap: 10px;
+    margin: 0 auto 15px;
+
+    .textBlock {
+      font-size: 11px;
+    }
+  }
+}

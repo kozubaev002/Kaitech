@@ -1,20 +1,14 @@
 .contactSection {
   display: flex;
-  justify-content: space-between;
-  gap: 60px;
+  justify-content: space-around;
   color: #1f1f1f;
   margin-top: -100px;
-  padding: 60px;
-}
-
-.info {
-  flex: 1;
-  min-width: 300px;
+  padding: 10px;
 }
 
 .title {
   width: 100%;
-  max-width: auto;
+  max-width: 400px;
   color: var(--main, rgba(216, 108, 44, 1));
   font-size: 32px;
   font-weight: 600;
@@ -31,20 +25,6 @@
     margin-bottom: 10px;
     font-size: 24px;
   }
-}
-
-.chatsTitle {
-  color: var(--main, rgba(216, 108, 44, 1));
-  font-size: 36px;
-  font-weight: 700;
-  margin: 30px 0;
-}
-
-.chatsInfo {
-  width: 100%;
-  max-width: 470px;
-  font-size: 24px;
-  font-weight: 500;
 }
 
 .form {
@@ -129,7 +109,41 @@ button {
   }
 }
 
-@media (max-width: 768px) {
+.phoneContainer {
+  width: 100%;
+  max-width: 400px;
+}
+
+.phoneInput {
+  width: 100% !important;
+  max-width: 400px;
+  height: 48px !important;
+  border: 1px solid #ccc !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+}
+
+@media (max-width: 900px) and (min-width:800px) {
+  .contactSection {
+    padding: 0;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  .form {
+    height: 100%;
+  }
+}
+
+@media (max-width: 870px) {
+  .contactSection {
+    gap: 30px;
+    justify-content: center;
+    padding: 0;
+  }
+}
+
+@media (max-width: 801px) {
   .contactSection {
     gap: 30px;
     justify-content: center;
