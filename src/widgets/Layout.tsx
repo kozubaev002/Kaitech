@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "./widgets/header/Header";
-import Footer from "./widgets/footer/Footer";
+import Header from "./header/Header"
+import Footer from "./footer/Footer";
 import { Outlet } from "react-router-dom";
 
 const Layout: React.FC = () => {

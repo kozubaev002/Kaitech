@@ -3,6 +3,13 @@ import styles from "./Header.module.scss";
 import kaitech from "../../assets/image/headerKaitech.png";
 
 const Header: React.FC = () => {
+    const scrollToSection = (id: string) => {
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <header className={styles.header}>
             <div className={styles.container}>
@@ -13,13 +20,14 @@ const Header: React.FC = () => {
 
                 <nav className={styles.nav}>
                     <ul>
-                        <li>О нас</li>
-                        <li>Наши услуги</li>
-                        <li>Проекты</li>
-                        <li>Карьера</li>
+                        <li onClick={() => scrollToSection("banner")}>О нас</li>
+                        <li onClick={() => scrollToSection("services")}>Наши услуги</li>
+                        <li onClick={() => scrollToSection("swiper")}>Проекты</li>
+                        <li onClick={() => scrollToSection("team")}>Карьера</li>
                     </ul>
                 </nav>
-                <button type="button">Связаться с нами</button>
+
+                <button onClick={() => scrollToSection("contact")} type="button">Связаться с нами</button>
             </div>
 
         </header>

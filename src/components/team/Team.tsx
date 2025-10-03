@@ -53,14 +53,14 @@ export const Team: React.FC = () => {
                     трудоустройстве, уже помогли десяткам людей построить успешную
                     карьеру с KaiTech - теперь очередь за вами.
                 </p>
-
-                <button
-                    type="button"
-                    className={styles.joinButton}
-                    aria-label="Присоединиться к команде KaiTech"
-                >
-                    Присоединиться
-                </button>
+                <a href="https://instagram.com/kaitech_it" aria-label="Instagram">
+                    <button
+                        type="button"
+                        className={styles.joinButton}
+                        aria-label="Присоединиться к команде KaiTech"
+                    >
+                        Присоединиться
+                    </button></a>
 
             </div>
         </section>

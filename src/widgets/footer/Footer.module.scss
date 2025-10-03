@@ -45,6 +45,15 @@
                 align-items: center;
                 gap: 70px;
                 padding: 0 70px;
+
+                a {
+                    transition: transform 0.3s ease, filter 0.3s ease;
+
+                    &:hover {
+                        transform: scale(1.2);
+                        filter: brightness(1.2);
+                    }
+                }
             }
         }
 
@@ -71,11 +80,16 @@
                 li {
                     cursor: pointer;
                     font-weight: 400;
-                    font-style: 400;
                     font-size: 16px;
                     line-height: 100%;
-                    letter-spacing: 0%;
                     color: rgba(255, 255, 255, 1);
+                    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+
+                    &:hover {
+                        transform: scale(1.05);
+                        color: #d86c2c;
+                        text-shadow: 0 4px 10px rgba(216, 108, 44, 0.5);
+                    }
                 }
             }
         }
