@@ -4,6 +4,15 @@
   color: #1f1f1f;
   margin-top: -100px;
   padding: 10px;
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .title {
@@ -186,7 +195,7 @@ button {
 
 @media (max-width:480px) {
   .contactSection {
-    padding: 15px;
+    padding: 30px;
   }
 
   .form {
