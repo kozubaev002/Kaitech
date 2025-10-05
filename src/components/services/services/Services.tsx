@@ -5,6 +5,7 @@ import Icon2 from "../../../assets/svg/services2.svg"
 import Icon3 from "../../../assets/svg/services3.svg"
 import Icon4 from "../../../assets/svg/services4.svg"
 
+
 const services = [
     {
         id: 1,
@@ -32,7 +33,7 @@ const services = [
     },
 ];
 
-export const Services = () => {
+export const Services: React.FC = () => {
     return (
         <div className="container"> 
         <section className={styles.servicesSection} aria-labelledby="services-title">

@@ -21,9 +21,6 @@ const Wave: React.FC = () => {
           strokeDasharray="10"
         />
       </svg>
-
-
-
     </div>
   );
 };

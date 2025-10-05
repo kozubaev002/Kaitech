@@ -14,10 +14,10 @@ const Footer: React.FC = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect(); 
+          observer.disconnect();
         }
       },
-      { threshold: 0.3 } 
+      { threshold: 0.3 }
     );
 
     if (containerRef.current) {
@@ -42,18 +42,18 @@ const Footer: React.FC = () => {
       >
         <div className={`${styles.brand} ${isVisible ? styles.animate : ""}`}>
           <div className={styles.logo}>
-            <img src={kaitech} alt="KaiTech логотипи" />
+            <img src={kaitech} alt="KaiTech логотипи" loading="lazy" />
             <span>KaiTech</span>
           </div>
           <div className={styles.social}>
             <a style={{ width: "50px", height: "50px" }} href="https://wa.me/996700113095" aria-label="WhatsApp">
-              <img src={whatsapp} alt="WhatsApp" />
+              <img src={whatsapp} alt="WhatsApp" loading="lazy" />
             </a>
             <a style={{ width: "48px", height: "48px" }} href="https://t.me/jdsissshx" aria-label="Telegram">
-              <img src={telegram} alt="Telegram" />
+              <img src={telegram} alt="Telegram" loading="lazy" />
             </a>
             <a style={{ width: "40px", height: "40px" }} href="https://instagram.com/kaitech_it" aria-label="Instagram">
-              <img src={instagram} alt="Instagram" />
+              <img src={instagram} alt="Instagram" loading="lazy" />
             </a>
           </div>
         </div>
