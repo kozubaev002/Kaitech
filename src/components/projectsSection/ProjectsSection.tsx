@@ -16,12 +16,13 @@ export const ProjectsSection: React.FC = () => {
                 src={leftImg}
                 alt="Счастливый клиент KaiTech слева"
                 itemProp="image"
+                loading="lazy"
             />
 
             <div className={styles.containerr}>
-                <h2 id="projects-title" className={styles.title} itemProp="headline">
+                <h3 id="projects-title" className={styles.title} itemProp="headline">
                     100+ реализованных проектов и довольных клиентов
-                </h2>
+                </h3>
                 <p className={styles.description} itemProp="description">
                     Мы KaiTech разрабатываем ПО для автоматизации малых и средних предприятий.
                     <br />
@@ -40,6 +41,7 @@ export const ProjectsSection: React.FC = () => {
                 src={rightImg}
                 alt="Счастливый клиент KaiTech справа"
                 itemProp="image"
+                loading="lazy"
             />
         </section>
     );

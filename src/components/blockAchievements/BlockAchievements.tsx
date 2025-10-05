@@ -31,10 +31,11 @@ export const BlockAchievements: React.FC = () => {
                     modules={[EffectCreative, Autoplay]}
                     className={styles.mySwiper}
                 >
-                    <SwiperSlide><img src={Img1} alt="" /></SwiperSlide>
-                    <SwiperSlide><img src={Img2} alt="" /></SwiperSlide>
-                    <SwiperSlide><img src={Img10} alt="" /></SwiperSlide>
-                    <SwiperSlide><img src={Img11} alt="" /></SwiperSlide>
+                    <SwiperSlide><img src={Img1} alt="KaiTech Logo" loading="lazy" /></SwiperSlide>
+                    <SwiperSlide><img src={Img2} alt="KaiTech Team Photo" loading="lazy" /></SwiperSlide>
+                    <SwiperSlide><img src={Img10} alt="Nursultan Ulan uulu" loading="lazy" /></SwiperSlide>
+                    <SwiperSlide><img src={Img11} alt="KaiTech Office" loading="lazy" /></SwiperSlide>
+
                 </Swiper>
 
                 <div className={styles.textBlock}>

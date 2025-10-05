@@ -8,13 +8,13 @@ const Header: React.FC = () => {
         if (section) {
             section.scrollIntoView({ behavior: "smooth" });
         }
-    };
+    }; 
 
     return (
         <header className={styles.header}>
             <div className={styles.container}>
                 <div className={styles.logoContainer}>
-                    <img src={kaitech} alt="KaiTech логотипи" />
+                    <img src={kaitech} alt="KaiTech логотипи" loading="lazy" />
                     <h1>KaiTech</h1>
                 </div>
 

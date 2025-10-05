@@ -3,7 +3,7 @@ import styles from "./Team.module.scss";
 import img2 from "../../assets/image/imageAgai.png"
 import me from "../../assets/image/It is me.jpg"
 import img from "../../assets/image/Nurzada.jpg"
-import CholponbekEsenbekov from "../../assets/image/Cholponbek Esenbekov.jpg" 
+import CholponbekEsenbekov from "../../assets/image/Cholponbek Esenbekov.jpg"
 
 const placeholder =
     "https://www.nicepng.com/png/detail/136-1366211_group-of-10-guys-login-user-icon-png.png";
