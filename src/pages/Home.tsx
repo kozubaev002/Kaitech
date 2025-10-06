@@ -7,7 +7,7 @@ import CompanyKgz from "../components/companyKGZ/CompanyKgz.tsx";
 import ContactForm from "../components/contactForm/ContactForm.tsx";
 import Swiper from "../components/swiper/Swiper.tsx";
 import Wave from "../components/wave/Wave.tsx";
-import { BlockAchievements } from "../components/blockAchievements/BlockAchievements.tsx"
+import { LatestNews } from "../components/latestNews/LatestNews.tsx"
 import { MapLocation } from "../components/mapLocation/MapLocation.tsx";
 
 const Home: React.FC = () => {
@@ -26,7 +26,7 @@ const Home: React.FC = () => {
             <div id="team">
                 <Team />
             </div>
-            <BlockAchievements />
+            <LatestNews />
             <CompanyKgz />
             <Wave />
             <div id="contact">

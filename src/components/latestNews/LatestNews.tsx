@@ -1,19 +1,49 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-creative";
 import { EffectCreative, Autoplay } from "swiper/modules";
 
-import styles from "./BlockAchievements.module.scss";
+import styles from "./LatestNews.module.scss";
 
 import Img1 from "../../assets/svg/kaitech.svg";
 import Img2 from "../../assets/image/kaitechFoto.png";
 import Img10 from "../../assets/image/Nursultan Ulan uulu.jpg";
 import Img11 from "../../assets/image/kaitech.png";
 
-export const BlockAchievements: React.FC = () => {
+export const LatestNews: React.FC = () => {
+    const titleRef = useRef<HTMLHeadingElement>(null);
+    const textRef = useRef<HTMLDivElement>(null);
+    const [titleActive, setTitleActive] = useState(false);
+    const [textActive, setTextActive] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) setTitleActive(true);
+            },
+            { threshold: 0.25 }
+        );
+        const observerText = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) setTextActive(true);
+            },
+            { threshold: 0. }
+        );
+
+        if (titleRef.current) observer.observe(titleRef.current);
+        if (textRef.current) observerText.observe(textRef.current);
+    }, []);
+
     return (
         <div className="container">
+            <h2
+                ref={titleRef}
+                className={`${styles.title} ${titleActive ? styles.active : ""}`}
+            >
+                Последние новости
+            </h2>
+
             <div className={styles.wrapper}>
                 <Swiper
                     grabCursor={true}
@@ -30,15 +60,19 @@ export const BlockAchievements: React.FC = () => {
                     }}
                     modules={[EffectCreative, Autoplay]}
                     className={styles.mySwiper}
+                    centeredSlides={true}
                 >
-                    <SwiperSlide><img src={Img1} alt="KaiTech Logo" loading="lazy" /></SwiperSlide>
-                    <SwiperSlide><img src={Img2} alt="KaiTech Team Photo" loading="lazy" /></SwiperSlide>
-                    <SwiperSlide><img src={Img10} alt="Nursultan Ulan uulu" loading="lazy" /></SwiperSlide>
-                    <SwiperSlide><img src={Img11} alt="KaiTech Office" loading="lazy" /></SwiperSlide>
-
+                    {[Img1, Img2, Img10, Img11].map((img, index) => (
+                        <SwiperSlide key={index} className={styles.slide}>
+                            <img src={img} alt={`Slide ${index + 1}`} loading="lazy" />
+                        </SwiperSlide>
+                    ))}
                 </Swiper>
 
-                <div className={styles.textBlock}>
+                <div
+                    ref={textRef}
+                    className={`${styles.textBlock} ${textActive ? styles.active : ""}`}
+                >
                     <p>
                         Наша команда заняла второе место на хакатоне <b>“StartUp Nation”</b>{" "}
                         с проектом <b>“Unikurs.kg”</b>, помогающий будущим абитуриентам со
