@@ -1,14 +1,38 @@
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 import styles from "./ProjectsSection.module.scss";
 import leftImg from "../../assets/svg/leftImg.svg";
 import rightImg from "../../assets/svg/right.svg";
 
 export const ProjectsSection: React.FC = () => {
+    const sectionRef = useRef<HTMLElement | null>(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting) {
+                    setIsVisible(true);
+                    observer.disconnect();
+                }
+            },
+            {threshold: 0.3}
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => {
+            if (sectionRef.current) observer.unobserve(sectionRef.current);
+        };
+    }, []);
+
     return (
-        <section 
-            className={styles.projectsSection} 
-            aria-labelledby="projects-title" 
-            itemScope 
+        <section
+            ref={sectionRef}
+            className={`${styles.projectsSection} ${isVisible ? styles.visible : ""}`}
+            aria-labelledby="projects-title"
+            itemScope
             itemType="https://schema.org/CreativeWork"
         >
             <img
@@ -25,11 +49,11 @@ export const ProjectsSection: React.FC = () => {
                 </h3>
                 <p className={styles.description} itemProp="description">
                     Мы KaiTech разрабатываем ПО для автоматизации малых и средних предприятий.
-                    <br />
+                    <br/>
                     Наши продукты помогают ведущим компаниям, а креативные стартапы — важная часть нашей работы.
                 </p>
-                <button 
-                    className={styles.btn} 
+                <button
+                    className={styles.btn}
                     aria-label="Подробнее о реализованных проектах KaiTech"
                 >
                     Подробнее
