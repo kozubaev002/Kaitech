@@ -1,7 +1,8 @@
 .header {
     width: 100%;
     height: auto;
-    border: 0.5px solid rgba(216, 108, 44, 1);
+    position: relative;
+    overflow: hidden;
 
     .container {
         width: 100%;
@@ -11,10 +12,14 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        position: relative;
 
         .logoContainer {
             display: flex;
             align-items: center;
+            transform: translateX(-100px);
+            opacity: 0;
+            animation: logoSlide 0.8s forwards 0.3s;
 
             img {
                 width: 113px;
@@ -39,6 +44,12 @@
                     font-weight: 500;
                     font-size: 20px;
                     cursor: pointer;
+                    transition: all 0.3s ease;
+                    opacity: 0;
+                    transform: translateY(-20px);
+                    display: inline-block;
+                    animation: navFade 0.6s forwards;
+                    animation-delay: calc(0.2s * var(--i));
 
                     &:hover {
                         color: rgba(216, 108, 44, 1);
@@ -58,6 +69,64 @@
             font-size: 18px;
             color: #fff;
             cursor: pointer;
+            transition: all 0.3s ease;
+            transform: translateX(100px);
+            opacity: 0;
+            animation: buttonSlide 0.8s forwards 0.6s;
+
+            &:hover {
+                background: rgba(216, 108, 44, 0.8);
+            }
+        }
+    }
+
+    @keyframes logoSlide {
+        from {
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes buttonSlide {
+        from {
+            transform: translateX(100px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes navFade {
+        from {
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    &.slideDown {
+        animation: headerSlide 0.8s ease forwards;
+    }
+
+    @keyframes headerSlide {
+        from {
+            transform: translateY(-100px);
+        }
+
+        to {
+            transform: translateY(0);
         }
     }
 

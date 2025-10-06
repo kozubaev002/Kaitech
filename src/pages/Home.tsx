@@ -1,27 +1,37 @@
 import React from "react";
 import Banner from "../widgets/banner/Banner";
-import { ProjectsSection } from "./projectsSection/ProjectsSection.tsx";
-import { Services } from "./services/services/Services.tsx";
-import { Team } from "../pages/team/Team.tsx"
-import CompanyKgz from "./companyKGZ/CompanyKgz.tsx";
-import ContactForm from "./contactForm/ContactForm.tsx";
-import Swiper from "./swiper/Swiper.tsx";
-import Wave from "./wave/Wave.tsx";
-import {BlockAchievements} from "./blockAchievements/BlockAchievements.tsx";
-import {MapLocation} from "./mapLocation/MapLocation.tsx";
+import {ProjectsSection} from "../components/projectsSection/ProjectsSection.tsx";
+import {Services} from "../components/services/services/Services.tsx";
+import {Team} from "../components/team/Team.tsx"
+import CompanyKgz from "../components/companyKGZ/CompanyKgz.tsx";
+import ContactForm from "../components/contactForm/ContactForm.tsx";
+import Swiper from "../components/swiper/Swiper.tsx";
+import Wave from "../components/wave/Wave.tsx";
+import {BlockAchievements} from "../components/blockAchievements/BlockAchievements.tsx"
+import {MapLocation} from "../components/mapLocation/MapLocation.tsx";
 
 const Home: React.FC = () => {
     return (
         <div>
-            <Banner />
-            <ProjectsSection />
-            <Services />
-            <Swiper />
-            <Team />
+            <div id="banner">
+                <Banner/>
+            </div>
+            <ProjectsSection/>
+            <div id="services">
+                <Services/>
+            </div>
+            <div id="swiper">
+                <Swiper/>
+            </div>
+            <div id="team">
+                <Team/>
+            </div>
             <BlockAchievements/>
-            <CompanyKgz />
+            <CompanyKgz/>
             <Wave/>
-            <ContactForm />
+            <div id="contact">
+                <ContactForm/>
+            </div>
             <MapLocation/>
         </div>
     );

@@ -1,16 +1,18 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  border: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
-body{
-  font-family: "Comfortaa", sans-serif !important;
+body {
+    font-family: "Comfortaa", sans-serif !important;
 }
-.container{
-  max-width: 1400px;
-  margin: auto;
-  height: auto;
-  padding: 0 38px;
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+    height: auto;
+    padding: 0 10px;
 }
