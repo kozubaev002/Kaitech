@@ -68,6 +68,22 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .overlayText {
+    font-size: 18px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .overlayText {
+    font-size: 11px;
+    padding: 8px;
+    height: 70px;
+    font-weight: 400;
+  }
+}
+
 @media (max-width: 480px) {
   .title {
     font-size: 20px;
@@ -77,5 +93,9 @@
 
   .title {
     border-radius: 5px;
+  }
+
+  .overlayText {
+    font-size: 9px;
   }
 }
