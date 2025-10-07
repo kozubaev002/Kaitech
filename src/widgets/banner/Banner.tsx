@@ -11,7 +11,7 @@ const Banner: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => setActiveIndex(0), 100); 
+    const timer = setTimeout(() => setActiveIndex(0), 100);
     return () => clearTimeout(timer);
   }, []);
 

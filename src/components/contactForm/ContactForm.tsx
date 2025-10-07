@@ -93,7 +93,7 @@ const ContactForm: React.FC = () => {
                         value={message}
                         onChange={(e) => {
                             const words = e.target.value.trim().split(/\s+/).filter(Boolean);
-                            if (words.length <= 300) setMessage(e.target.value);
+                            if (words.length <= 150) setMessage(e.target.value);
                         }}
                         required
                         placeholder="Ваше сообщение"
@@ -101,7 +101,7 @@ const ContactForm: React.FC = () => {
                     />
 
                     <p style={{ fontSize: "0.9rem", color: "#555" }}>
-                        Слов: {message.trim().split(/\s+/).filter(Boolean).length}/300
+                        Слов: {message.trim().split(/\s+/).filter(Boolean).length}/150
                     </p>
 
                     <button aria-label="Отправить" type="submit">Отправить</button>

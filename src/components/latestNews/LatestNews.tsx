@@ -1,9 +1,8 @@
-
-import React, {useEffect, useRef, useState} from "react";
-import {Swiper, SwiperSlide} from "swiper/react";
+import React, { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-creative";
-import {EffectCreative, Autoplay} from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import styles from "./LatestNews.module.scss";
 
 import Img1 from "../../assets/image/kaitechFoto.png";
@@ -47,14 +46,12 @@ export const LatestNews: React.FC = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setTextTransition(false); 
-            
+            setTextTransition(false);
             setTimeout(() => {
                 setSetIndex((prev) => (prev + 1) % dataSets.length);
-                setTextTransition(true); 
-            }, 1000); 
-
-        }, 8000); 
+                setTextTransition(true);
+            }, 1000);
+        }, 8000);
 
         return () => clearInterval(interval);
     }, [dataSets.length]); 
@@ -62,12 +59,12 @@ export const LatestNews: React.FC = () => {
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => entry.isIntersecting && setTitleActive(true),
-            {threshold: 0.25}
+            { threshold: 0.25 }
         );
 
         const observerText = new IntersectionObserver(
             ([entry]) => entry.isIntersecting && setTextActive(true),
-            {threshold: 0.25}
+            { threshold: 0.25 }
         );
 
         if (titleRef.current) observer.observe(titleRef.current);
@@ -104,20 +101,18 @@ export const LatestNews: React.FC = () => {
                     {dataSets[setIndex].images.map((img, index) => (
                         <SwiperSlide
                             key={index}
-                            className={`${styles.slide} ${
-                                textTransition ? styles.slideIn : styles.slideOut
-                            }`}
+                            className={`${styles.slide} ${textTransition ? styles.slideIn : styles.slideOut
+                                }`}
                         >
-                            <img src={img} alt={`Slide ${index + 1}`} loading="lazy"/>
+                            <img src={img} alt={`Slide ${index + 1}`} loading="lazy" />
                         </SwiperSlide>
                     ))}
                 </Swiper>
 
                 <div
                     ref={textRef}
-                    className={`${styles.textBlock} ${textActive ? styles.active : ""} ${
-                        textTransition ? styles.fadeIn : styles.fadeOut
-                    }`}
+                    className={`${styles.textBlock} ${textActive ? styles.active : ""} ${textTransition ? styles.fadeIn : styles.fadeOut
+                        }`}
                 >
                     <p>{dataSets[setIndex].text}</p>
                 </div>

@@ -1,10 +1,10 @@
-import React, {useEffect, useRef} from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./Team.module.scss";
 import me from "../../assets/image/It is me.jpg";
-import img from "../../assets/image/Nurzada.jpg";
+import img3 from "../../assets/image/Nurzada.jpg";
 import CholponbekEsenbekov from "../../assets/image/Cholponbek Esenbekov.jpg";
 import Elmira from "../../assets/image/Elmira.jpg"
-import NursultanAgai from "../../assets/image/Nursultan Agai.PNG"
+import NursultanAgai from "../../assets/image/Nursultan.jpg"
 
 const placeholder =
     "https://www.nicepng.com/png/detail/136-1366211_group-of-10-guys-login-user-icon-png.png";
@@ -12,7 +12,7 @@ const placeholder =
 const teamMembers = [
     { id: 1, name: "Cholponbek Esenbekov", role: "Founder", photo: CholponbekEsenbekov },
     { id: 2, name: "Nursultan Ulan uulu", role: "Director", photo: NursultanAgai },
-    { id: 3, name: "Nurzada Tobokelova", role: "Project manager", photo: img },
+    { id: 3, name: "Nurzada Tobokelova", role: "Project manager", photo: img3 },
     { id: 4, name: "Elmira Sattorova", role: "Frontend developer", photo: Elmira },
     { id: 5, name: "Kozubaev Jumaniyaz", role: "Frontend developer", photo: me },
 ];
@@ -24,7 +24,7 @@ export const Team: React.FC = () => {
         const section = sectionRef.current;
         const cards = section?.querySelectorAll(`.${styles.memberCard}`);
         const textElements = section?.querySelectorAll(
-            `.${styles.description}, .${styles.joinButton}, .${styles.title}` // title кошулду
+            `.${styles.description}, .${styles.joinButton}, .${styles.title}`
         );
 
         const observer = new IntersectionObserver(
@@ -34,11 +34,11 @@ export const Team: React.FC = () => {
                         const index = Array.from(cards || []).indexOf(entry.target);
                         entry.target.classList.add(styles.visible);
                         (entry.target as HTMLElement).style.transitionDelay =
-                            index >= 0 ? `${index * 0.2}s` : "0.5s"; // title үчүн 0.5s жакшы
+                            index >= 0 ? `${index * 0.2}s` : "0.5s";
                     }
                 });
             },
-            {threshold: 0.2}
+            { threshold: 0.2 }
         );
 
         cards?.forEach((card) => observer.observe(card));
@@ -78,7 +78,11 @@ export const Team: React.FC = () => {
                     с KaiTech - теперь очередь за вами.
                 </p>
 
-                <a href="https://instagram.com/kaitech_it" aria-label="Instagram">
+                <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://instagram.com/kaitech_it"
+                    aria-label="Instagram">
                     <button
                         type="button"
                         className={styles.joinButton}

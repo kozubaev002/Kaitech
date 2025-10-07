@@ -7,13 +7,11 @@
   min-height: 674px;
   padding: 40px 16px;
 
-  // Баштап жашырулуу абал
   opacity: 0;
   transform: translateY(50px);
   transition: all 1s ease;
 }
 
-// Секция көрүнгөндө актив абалы
 .visible {
   opacity: 1;
   transform: translateY(0);
@@ -123,14 +121,17 @@
     padding: 60px 20px;
     min-height: auto;
   }
+
   .title {
     font-size: 38px;
   }
+
   .description {
     width: auto;
     margin: 30px 40px;
     font-size: 22px;
   }
+
   .leftImg {
     height: 450px;
     position: absolute;
@@ -138,6 +139,7 @@
     top: 50%;
     transform: translateY(-50%) rotate(20deg);
   }
+
   .rightImg {
     height: 480px;
     position: absolute;
@@ -151,6 +153,7 @@
     padding: 0 13px;
     margin: 50px auto;
   }
+
   .title {
     max-width: 478px;
     width: 100%;
@@ -159,6 +162,7 @@
     line-height: 100%;
     text-align: center;
   }
+
   .description {
     width: auto;
     color: rgba(0, 0, 0, 1);
@@ -167,6 +171,7 @@
     line-height: 100%;
     margin: 30px 15px;
   }
+
   .btn {
     max-width: 230px;
     width: 100%;
@@ -176,6 +181,7 @@
     font-size: 10px;
     font-weight: 400;
   }
+
   .leftImg {
     height: 190px;
     position: absolute;
@@ -183,6 +189,7 @@
     top: 55%;
     transform: translateY(-50%) rotate(15deg);
   }
+
   .rightImg {
     height: 200px;
     position: absolute;

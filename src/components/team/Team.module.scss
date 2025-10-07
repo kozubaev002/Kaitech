@@ -68,6 +68,7 @@
   font-weight: 400;
   text-align: center;
 }
+
 a {
   text-decoration: none;
 }
@@ -108,6 +109,7 @@ a {
   .members {
     gap: 25px 90px;
   }
+
   .memberCard {
     width: 300px;
   }
@@ -117,15 +119,19 @@ a {
   .members {
     gap: 25px 80px;
   }
+
   .memberCard {
     width: 220px;
   }
+
   .name {
     font-size: 30px;
   }
+
   .role {
     font-size: 20px;
   }
+
   .description {
     font-size: 26px;
   }
@@ -135,12 +141,15 @@ a {
   .members {
     gap: 25px 45px;
   }
+
   .memberCard {
     width: 180px;
   }
+
   .name {
     font-size: 22px;
   }
+
   .role {
     font-size: 15px;
   }
@@ -152,17 +161,21 @@ a {
     font-weight: 500;
     margin: 50px auto 30px;
   }
+
   .memberCard {
     width: 150px;
   }
+
   .name {
     font-size: 18px;
     font-weight: 400;
     margin-top: 10px;
   }
+
   .role {
     font-size: 14px;
   }
+
   .description {
     font-size: 16px;
     font-weight: 400;
@@ -173,12 +186,15 @@ a {
   .members {
     gap: 25px 20px;
   }
+
   .memberCard {
     width: 130px;
   }
+
   .name {
     font-size: 14px;
   }
+
   .role {
     font-size: 10px;
   }
@@ -188,9 +204,11 @@ a {
   .memberCard {
     width: 100px;
   }
+
   .description {
     font-size: 14px;
   }
+
   .joinButton {
     font-size: 14px;
     margin: 0 auto 100px;
