@@ -8,7 +8,7 @@ import styles from "./BlockAchievements.module.scss";
 
 import Img1 from "../../assets/svg/kaitech.svg";
 import Img2 from "../../assets/image/kaitechFoto.png";
-import Img10 from "../../assets/image/Nursultan Ulan uulu.jpg";
+import Img10 from "../../assets/image/Nursultan.jpg";
 import Img11 from "../../assets/image/kaitech.png";
 
 export const BlockAchievements: React.FC = () => {

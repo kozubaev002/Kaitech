@@ -2,7 +2,7 @@ import React, {useEffect, useRef} from "react";
 import styles from "./Team.module.scss";
 import img2 from "../../assets/image/imageAgai.png";
 import me from "../../assets/image/It is me.jpg";
-import img from "../../assets/image/Nurzada.jpg";
+import img3 from "../../assets/image/Nurzada.jpg";
 import CholponbekEsenbekov from "../../assets/image/Cholponbek Esenbekov.jpg";
 import Elmira from "../../assets/image/Elmira.jpg"
 
@@ -12,7 +12,7 @@ const placeholder =
 const teamMembers = [
     { id: 1, name: "Cholponbek Esenbekov", role: "Founder", photo: CholponbekEsenbekov },
     { id: 2, name: "Nursultan Ulan uulu", role: "Director", photo: img2 },
-    { id: 3, name: "Nurzada Tobokelova", role: "Project manager", photo: img },
+    { id: 3, name: "Nurzada Tobokelova", role: "Project manager", photo: img3 },
     { id: 4, name: "Elmira Sattorova", role: "Frontend developer", photo: Elmira },
     { id: 5, name: "Kozubaev Jumaniyaz", role: "Frontend developer", photo: me },
 ];
