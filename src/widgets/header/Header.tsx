@@ -8,7 +8,7 @@ const Header: React.FC = () => {
         if (section) {
             section.scrollIntoView({ behavior: "smooth" });
         }
-    }; 
+    };
 
     return (
         <header className={styles.header}>

@@ -7,11 +7,11 @@ import demirbank from "../../assets/image/demirbank.png";
 import beeline from "../../assets/image/beeline.png";
 
 const companies = [
-  { img: ctechnology, name: "Ctechnology" },
-  { img: bakaibank, name: "Bakai Bank" },
-  { img: mbank, name: "MBank" },
-  { img: demirbank, name: "Demir Bank" },
-  { img: beeline, name: "Beeline" },
+    { img: ctechnology, name: "Ctechnology" },
+    { img: bakaibank, name: "Bakai Bank" },
+    { img: mbank, name: "MBank" },
+    { img: demirbank, name: "Demir Bank" },
+    { img: beeline, name: "Beeline" },
 ];
 
 
@@ -62,7 +62,7 @@ const CompanyKgz: React.FC = () => {
                     >
                         {companies.concat(companies).map((company, idx) => (
                             <div key={idx} className={styles.logoBox}>
-                                <img src={company.img} alt={`${company.name} logo`} loading="lazy"  />
+                                <img src={company.img} alt={`${company.name} logo`} loading="lazy" />
                             </div>
                         ))}
                     </div>
