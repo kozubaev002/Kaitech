@@ -7,13 +7,11 @@
   min-height: 674px;
   padding: 40px 16px;
 
-  // Баштап жашырулуу абал
   opacity: 0;
   transform: translateY(50px);
   transition: all 1s ease;
 }
 
-// Секция көрүнгөндө актив абалы
 .visible {
   opacity: 1;
   transform: translateY(0);

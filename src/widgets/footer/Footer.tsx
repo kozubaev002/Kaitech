@@ -56,12 +56,26 @@ const Footer: React.FC = () => {
               <img src={whatsapp} alt="WhatsApp" loading="lazy" />
             </a>
 
-            <a style={{ width: "48px", height: "48px" }} href="https://t.me/Nur6ultan" aria-label="Telegram">
+            <a
+              style={{ width: "48px", height: "48px" }}
+              href="https://t.me/Nur6ultan"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram"
+            >
               <img src={telegram} alt="Telegram" loading="lazy" />
             </a>
-            <a style={{ width: "40px", height: "40px" }} href="https://instagram.com/kaitech_it" aria-label="Instagram">
+
+            <a
+              style={{ width: "48px", height: "48px" }}
+              href="https://instagram.com/kaitech_it"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
               <img src={instagram} alt="Instagram" loading="lazy" />
             </a>
+
           </div>
         </div>
 
@@ -86,7 +100,7 @@ const Footer: React.FC = () => {
                 Кыргызская Республика, 720000 г. Бишкек, ул. Мусы Джалиля 192
               </a>
             </h3>
-            <p>Телефон: +996 (700) 113 095</p>
+            <p>Телефон: +996 (502) 102 270</p>
           </div>
         </div>
 
