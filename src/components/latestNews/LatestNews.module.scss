@@ -24,7 +24,7 @@
   transition: all 1s ease;
 
   b {
-    color: #D86C2C;
+      color: #D86C2C;
   }
 }
 
@@ -33,12 +33,14 @@
   transform: translateY(0);
 }
 
+/* Плавное появление текста при смене новости */
 .fadeIn {
   opacity: 1;
   transform: translateY(0);
   transition: all 1s ease;
 }
 
+/* Плавное исчезновение текста при смене новости */
 .fadeOut {
   opacity: 0;
   transform: translateY(50px);
@@ -54,13 +56,12 @@
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
 
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
   }
 }
-
 .slideIn {
   opacity: 1;
   transform: translateX(0);
@@ -82,47 +83,47 @@
 
 @media (max-width: 1024px) {
   .wrapper {
-    flex-direction: column;
-    gap: 30px;
-    margin: 70px auto;
+      flex-direction: column;
+      gap: 30px;
+      margin: 70px auto;
   }
 
   .textBlock {
-    font-size: 28px;
-    width: 100%;
-    text-align: center;
+      font-size: 28px;
+      width: 100%;
+      text-align: center;
   }
 
   .mySwiper {
-    border-radius: 10px;
-
-    img {
       border-radius: 10px;
-    }
+
+      img {
+          border-radius: 10px;
+      }
   }
 }
 
 @media (max-width: 768px) {
   .wrapper {
-    gap: 10px;
-    margin: 0 auto 30px;
+      gap: 10px;
+      margin: 0 auto 30px;
   }
 
   .textBlock {
-    font-size: 20px;
+      font-size: 20px;
   }
 
   .mySwiper {
-    border-radius: 5px;
-
-    img {
       border-radius: 5px;
-    }
+
+      img {
+          border-radius: 5px;
+      }
   }
 }
 
 @media (max-width: 500px) {
   .textBlock {
-    font-size: 11px;
+      font-size: 11px;
   }
 }
