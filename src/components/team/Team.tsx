@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, {useEffect, useRef} from "react";
 import styles from "./Team.module.scss";
 import img2 from "../../assets/image/imageAgai.png";
 import me from "../../assets/image/It is me.jpg";
@@ -24,7 +24,7 @@ export const Team: React.FC = () => {
         const section = sectionRef.current;
         const cards = section?.querySelectorAll(`.${styles.memberCard}`);
         const textElements = section?.querySelectorAll(
-            `.${styles.description}, .${styles.joinButton}`
+            `.${styles.description}, .${styles.joinButton}, .${styles.title}` // title кошулду
         );
 
         const observer = new IntersectionObserver(
@@ -34,11 +34,11 @@ export const Team: React.FC = () => {
                         const index = Array.from(cards || []).indexOf(entry.target);
                         entry.target.classList.add(styles.visible);
                         (entry.target as HTMLElement).style.transitionDelay =
-                            index >= 0 ? `${index * 0.2}s` : "0.5s";
+                            index >= 0 ? `${index * 0.2}s` : "0.5s"; // title үчүн 0.5s жакшы
                     }
                 });
             },
-            { threshold: 0.2 }
+            {threshold: 0.2}
         );
 
         cards?.forEach((card) => observer.observe(card));
