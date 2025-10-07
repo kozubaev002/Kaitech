@@ -1,22 +1,88 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./MapLocation.module.scss";
 
+declare global {
+  interface Window {
+    DG?: any;
+  }
+}
+
 export const MapLocation: React.FC = () => {
-    return (
-        <div className="container">
-            <h2 className={styles.title}>Наше местоположение</h2>
-            <div className={styles.mapContainer}>
-                <iframe
-                    title="Карты местоположения KaiTech"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.799678581931!2d74.63910837646312!3d42.88607517116337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389eb774e24c33c5%3A0x74249db055aae55d!2s192%20%D0%9C%D1%83%D1%81%D1%8B%20%D0%94%D0%B6%D0%B0%D0%BB%D0%B8%D0%BB%D1%8F%2C%20%D0%91%D0%B8%D1%88%D0%BA%D0%B5%D0%BA!5e0!3m2!1sru!2skg!4v1727609999999!5m2!1sru!2skg"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-            </div>
+  const mapRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLHeadingElement>(null);
+  const [animated, setAnimated] = useState(false);
+
+  useEffect(() => {
+    const scriptId = "dg-map-script";
+    const loadScript = () => {
+      return new Promise<void>((resolve, reject) => {
+        if (document.getElementById(scriptId)) {
+          resolve();
+          return;
+        }
+        const script = document.createElement("script");
+        script.id = scriptId;
+        script.src = "https://maps.api.2gis.ru/2.0/loader.js?pkg=full";
+        script.async = true;
+        script.onload = () => resolve();
+        script.onerror = () => reject(new Error("API 2ГИС не удалось загрузить"));
+        document.body.appendChild(script);
+      });
+    };
+
+    const initMap = async () => {
+      if (!window.DG) return;
+      await window.DG;
+
+      const avenirCoordinates: [number, number] = [42.885293, 74.634191];
+      const map = window.DG.map(mapRef.current, { center: avenirCoordinates, zoom: 17 });
+
+      const popupContent = `
+        <div class="${styles.mapPopup}">
+          <header>
+            <h2>Avenir College</h2>
+          </header>
+          <p style="font-size:14px;">ул. Мусы Джалиля 192, Бишкек</p>
         </div>
+      `;
+
+      window.DG.marker(avenirCoordinates).addTo(map).bindPopup(popupContent).openPopup();
+    };
+
+    loadScript().then(initMap).catch(console.error);
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setAnimated(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
     );
+
+    if (mapRef.current && textRef.current) {
+      observer.observe(mapRef.current);
+      observer.observe(textRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section className="container" aria-label="Расположение Avenir College">
+      <h1
+        ref={textRef}
+        className={`${styles.title} ${animated ? styles.animated : ""}`}
+      >
+        Наше местоположение
+      </h1>
+      <div
+        ref={mapRef}
+        className={`${styles.mapContainer} ${animated ? styles.animated : ""}`}
+        role="region"
+        aria-label="Карта Avenir College"
+      ></div>
+    </section>
+  );
 };
