@@ -46,10 +46,17 @@ const Footer: React.FC = () => {
             <span>KaiTech</span>
           </div>
           <div className={styles.social}>
-            <a style={{ width: "50px", height: "50px" }} href="https://wa.me/996700113095" aria-label="WhatsApp">
+            <a
+              style={{ width: "50px", height: "50px" }}
+              href="https://wa.me/996502102270"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
               <img src={whatsapp} alt="WhatsApp" loading="lazy" />
             </a>
-            <a style={{ width: "48px", height: "48px" }} href="https://t.me/jdsissshx" aria-label="Telegram">
+
+            <a style={{ width: "48px", height: "48px" }} href="https://t.me/Nur6ultan" aria-label="Telegram">
               <img src={telegram} alt="Telegram" loading="lazy" />
             </a>
             <a style={{ width: "40px", height: "40px" }} href="https://instagram.com/kaitech_it" aria-label="Instagram">
