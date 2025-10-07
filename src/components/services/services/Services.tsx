@@ -1,6 +1,6 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Services.module.scss";
-import {ServiceCard} from "../serviceCard/ServiceCard";
+import { ServiceCard } from "../serviceCard/ServiceCard";
 import Icon1 from "../../../assets/svg/services1.svg";
 import Icon2 from "../../../assets/svg/services2.svg";
 import Icon3 from "../../../assets/svg/services3.svg";
@@ -47,7 +47,7 @@ export const Services: React.FC = () => {
                     observer.disconnect();
                 }
             },
-            {threshold: 0.3}
+            { threshold: 0.3 }
         );
 
         if (sectionRef.current) observer.observe(sectionRef.current);

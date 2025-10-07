@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./ProjectsSection.module.scss";
 import leftImg from "../../assets/svg/leftImg.svg";
 import rightImg from "../../assets/svg/right.svg";
@@ -15,7 +15,7 @@ export const ProjectsSection: React.FC = () => {
                     observer.disconnect();
                 }
             },
-            {threshold: 0.3}
+            { threshold: 0.3 }
         );
 
         if (sectionRef.current) {
@@ -49,7 +49,7 @@ export const ProjectsSection: React.FC = () => {
                 </h3>
                 <p className={styles.description} itemProp="description">
                     Мы KaiTech разрабатываем ПО для автоматизации малых и средних предприятий.
-                    <br/>
+                    <br />
                     Наши продукты помогают ведущим компаниям, а креативные стартапы — важная часть нашей работы.
                 </p>
                 <button

@@ -1,8 +1,8 @@
 import React from "react";
 import Banner from "../widgets/banner/Banner";
-import {ProjectsSection} from "../components/projectsSection/ProjectsSection.tsx";
-import {Services} from "../components/services/services/Services.tsx";
-import {Team} from "../components/team/Team.tsx"
+import { ProjectsSection } from "../components/projectsSection/ProjectsSection.tsx";
+import { Services } from "../components/services/services/Services.tsx";
+import { Team } from "../components/team/Team.tsx"
 import CompanyKgz from "../components/companyKGZ/CompanyKgz.tsx";
 import ContactForm from "../components/contactForm/ContactForm.tsx";
 import Swiper from "../components/swiper/Swiper.tsx";
@@ -14,25 +14,25 @@ const Home: React.FC = () => {
     return (
         <div>
             <div id="banner">
-                <Banner/>
+                <Banner />
             </div>
-            <ProjectsSection/>
+            <ProjectsSection />
             <div id="services">
-                <Services/>
+                <Services />
             </div>
             <div id="swiper">
-                <Swiper/>
+                <Swiper />
             </div>
             <div id="team">
-                <Team/>
+                <Team />
             </div>
             <LatestNews />
             <CompanyKgz />
             <Wave />
             <div id="contact">
-                <ContactForm/>
+                <ContactForm />
             </div>
-            <MapLocation/>
+            <MapLocation />
         </div>
     );
 };

@@ -6,7 +6,7 @@ const NotFound: React.FC = () => {
   const navigate = useNavigate();
 
   const goHome = () => {
-    navigate("/"); 
+    navigate("/");
   };
 
   return (
@@ -21,4 +21,3 @@ const NotFound: React.FC = () => {
 };
 
 export default NotFound;
-  
