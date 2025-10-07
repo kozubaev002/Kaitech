@@ -1,15 +1,20 @@
-// LatestNews.tsx
+
 import React, {useEffect, useRef, useState} from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-creative";
 import {EffectCreative, Autoplay} from "swiper/modules";
 import styles from "./LatestNews.module.scss";
+
 import Img1 from "../../assets/image/kaitechFoto.png";
 import Img2 from "../../assets/image/2025.jpg"
-import Img3 from "../../assets/image/kaitech.png";
+import Img3 from "../../assets/svg/kaitech.svg"
 import Img4 from "../../assets/image/kaitech2.jpg"
 import Img5 from "../../assets/image/img.png"
+import Img6 from "../../assets/svg/kaitech1.png"
+import Img7 from "../../assets/svg/kaitech3.png"
+import Img8 from "../../assets/svg/kaitech4.png"
+
 
 export const LatestNews: React.FC = () => {
     const titleRef = useRef<HTMLHeadingElement>(null);
@@ -30,22 +35,30 @@ export const LatestNews: React.FC = () => {
                 </>
             ),
         },
-
+        {
+            images: [Img6, Img7, Img8, Img3, Img5],
+            text: (
+                <>
+                    Отличная новость! В <b>Kaitech</b> вводится новая традиция. Теперь **каждый месяц** будут проводиться встречи со спикерами и экспертами из IT-индустрии. Это прекрасный шанс для студентов получить уникальные знания и расширить свой нетворкинг!
+                </>
+            ),
+        },
     ];
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setTextTransition(false); // fade out
+            setTextTransition(false); 
+            
             setTimeout(() => {
                 setSetIndex((prev) => (prev + 1) % dataSets.length);
-                setTextTransition(true); // fade in
-            }, 1000); // совпадает с CSS transition
-        }, 8000);
+                setTextTransition(true); 
+            }, 1000); 
+
+        }, 8000); 
 
         return () => clearInterval(interval);
-    }, []);
+    }, [dataSets.length]); 
 
-    // Scroll анимация
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => entry.isIntersecting && setTitleActive(true),
@@ -59,6 +72,11 @@ export const LatestNews: React.FC = () => {
 
         if (titleRef.current) observer.observe(titleRef.current);
         if (textRef.current) observerText.observe(textRef.current);
+
+        return () => {
+             if (titleRef.current) observer.unobserve(titleRef.current);
+             if (textRef.current) observerText.unobserve(textRef.current);
+        };
     }, []);
 
     return (
@@ -75,7 +93,7 @@ export const LatestNews: React.FC = () => {
                     grabCursor
                     loop
                     autoplay={{
-                        delay: 1000,
+                        delay: 1000, 
                         disableOnInteraction: false,
                     }}
                     speed={1000}
