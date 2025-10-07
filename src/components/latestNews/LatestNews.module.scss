@@ -1,0 +1,125 @@
+.title {
+  color: var(--main, rgba(216, 108, 44, 1));
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  margin: 137px auto 60px;
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.title.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.textBlock {
+  width: 100%;
+  font-size: 40px;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+
+  b {
+    color: #D86C2C;
+  }
+}
+
+.textBlock.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1s ease;
+}
+
+.fadeOut {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.mySwiper {
+  width: 100%;
+  max-width: 735px;
+  height: auto;
+  border-radius: 15px;
+  aspect-ratio: 2 / 1.2;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+}
+
+/* Плавное скольжение для слайдов */
+.slideIn {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 1s ease;
+}
+
+.slideOut {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 1s ease;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  margin: 50px auto 120px;
+}
+
+/* Media queries (адаптив) */
+@media (max-width: 1024px) {
+  .wrapper {
+    flex-direction: column;
+    gap: 30px;
+    margin: 70px auto;
+  }
+  .textBlock {
+    font-size: 28px;
+    width: 100%;
+    text-align: center;
+  }
+  .mySwiper {
+    border-radius: 10px;
+
+    img {
+      border-radius: 10px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    gap: 10px;
+    margin: 0 auto 30px;
+  }
+  .textBlock {
+    font-size: 20px;
+  }
+  .mySwiper {
+    border-radius: 5px;
+
+    img {
+      border-radius: 5px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .textBlock {
+    font-size: 11px;
+  }
+}
