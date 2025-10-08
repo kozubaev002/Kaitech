@@ -11,6 +11,7 @@
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 1s ease-out, transform 1.3s ease-out;
+  cursor: pointer;
 }
 
 .visibleCard {

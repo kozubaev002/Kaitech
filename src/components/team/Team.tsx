@@ -78,7 +78,11 @@ export const Team: React.FC = () => {
                     с KaiTech - теперь очередь за вами.
                 </p>
 
-                <a href="https://instagram.com/kaitech_it" aria-label="Instagram">
+                <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://instagram.com/kaitech_it"
+                    aria-label="Instagram">
                     <button
                         type="button"
                         className={styles.joinButton}

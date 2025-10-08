@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import styles from "./Swiper.module.scss";
-
 import SafeClinic from "../../assets/image/Safe Clinik.png";
 import SportHub from "../../assets/image/SportHub.png";
 import CicleZone from "../../assets/image/CicleZone.png";

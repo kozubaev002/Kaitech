@@ -3,6 +3,7 @@ import styles from "./ProjectsSection.module.scss";
 import leftImg from "../../assets/svg/leftImg.svg";
 import rightImg from "../../assets/svg/right.svg";
 
+
 export const ProjectsSection: React.FC = () => {
     const sectionRef = useRef<HTMLElement | null>(null);
     const [isVisible, setIsVisible] = useState(false);
@@ -59,7 +60,6 @@ export const ProjectsSection: React.FC = () => {
                     Подробнее
                 </button>
             </div>
-
             <img
                 className={styles.rightImg}
                 src={rightImg}
