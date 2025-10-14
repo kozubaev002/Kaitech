@@ -169,7 +169,7 @@
                     }
                 }
 
-                p {
+                span {
                     font-weight: 400;
                     font-style: 400;
                     font-size: 16px;
@@ -182,6 +182,79 @@
 
         .adaptivka {
             display: none;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 900px) {
+        .container {
+            justify-content: space-around;
+            padding: 80px 30px;
+            gap: 30px;
+
+            .brand {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+
+                .logo {
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    right: 35px;
+
+                    img {
+                        width: 160px;
+                        height: auto;
+                    }
+
+                    span {
+                        font-size: 32px;
+                    }
+                }
+
+                .social {
+                    display: flex;
+                    align-items: center;
+                    gap: 30px;
+                    padding: 0;
+                }
+            }
+
+            .nav,
+            .contacts {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                h2 {
+                    font-size: 18px;
+                }
+
+                ul,
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                }
+
+                li,
+                h3,
+                span {
+                    font-size: 14px;
+                }
+            }
+
+            .contacts {
+                div {
+                    span {
+                        font-size: 13px;
+                    }
+                }
+            }
+
+            .adaptivka {
+                display: none;
+            }
         }
     }
 
@@ -344,7 +417,7 @@
                             }
                         }
 
-                        p {
+                        span {
                             font-weight: 400;
                             font-style: 400;
                             font-size: 16px;
@@ -367,78 +440,134 @@
         }
     }
 
-    @media (min-width: 769px) and (max-width: 900px) {
+    @media (max-width: 380px) {
         .container {
-            justify-content: space-around;
-            padding: 80px 30px;
-            gap: 30px;
 
-            .brand {
+            .adaptivka {
                 display: flex;
-                flex-direction: column;
-                gap: 25px;
+                gap: 40px;
 
-                .logo {
+                .nav2 {
                     display: flex;
-                    align-items: center;
-                    position: relative;
-                    right: 35px;
+                    flex-direction: column;
+                    gap: 40px;
 
-                    img {
-                        width: 160px;
-                        height: auto;
+                    h2 {
+                        font-weight: 500;
+                        font-size: 14px;
+                        color: #fff;
                     }
 
-                    span {
-                        font-size: 32px;
+                    ul {
+                        list-style: none;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 30px;
+                        padding: 0;
+                        margin: 0;
+
+                        li {
+                            font-weight: 800;
+                            font-size: 10px;
+                            color: #fff;
+                            cursor: pointer;
+                            position: relative;
+                            transition: all 0.3s ease;
+
+                            &:hover {
+                                transform: scale(1.05);
+                                color: #d86c2c;
+                                text-shadow: 0 4px 10px rgba(216, 108, 44, 0.5);
+                            }
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                bottom: -3px;
+                                left: 0;
+                                width: 0;
+                                height: 2px;
+                                background-color: #d86c2c;
+                                transition: width 0.3s ease;
+                            }
+
+                            &:hover::after {
+                                width: 100%;
+                            }
+                        }
                     }
                 }
 
-                .social {
+                .contacts2 {
                     display: flex;
-                    align-items: center;
-                    gap: 30px;
-                    padding: 0;
+                    flex-direction: column;
+                    gap: 39px;
+
+                    h2 {
+                        font-weight: 500;
+                        font-size: 14px;
+                        color: #fff;
+                    }
+
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 45px;
+
+                        h3 {
+                            width: 210px;
+                            font-weight: 400;
+                            font-size: 16px;
+                            color: #fff;
+
+                            a {
+                                color: inherit;
+                                text-decoration: none;
+                                position: relative;
+                                transition: all 0.3s ease;
+                                font-size: 10px;
+                                font-weight: 800;
+                                width: 150px;
+
+                                &:hover {
+                                    transform: scale(1.05);
+                                    color: #d86c2c;
+                                    text-shadow: 0 4px 10px rgba(216, 108, 44, 0.5);
+                                }
+
+                                &::after {
+                                    content: '';
+                                    position: absolute;
+                                    bottom: -3px;
+                                    left: 0;
+                                    width: 0;
+                                    height: 2px;
+                                    background-color: #d86c2c;
+                                    transition: width 0.3s ease;
+                                }
+
+                                &:hover::after {
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        span {
+                            font-weight: 800;
+                            font-size: 10px;
+                            color: #fff;
+                        }
+                    }
                 }
             }
 
             .nav,
             .contacts {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-
-                h2 {
-                    font-size: 18px;
-                }
-
-                ul,
-                div {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 15px;
-                }
-
-                li,
-                h3,
-                p {
-                    font-size: 14px;
-                }
-            }
-
-            .contacts {
-                div {
-                    p {
-                        font-size: 13px;
-                    }
-                }
-            }
-
-            .adaptivka {
                 display: none;
             }
         }
     }
+
 }
 
 .container {

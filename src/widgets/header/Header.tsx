@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Header.module.scss";
 import kaitech from "../../assets/image/headerKaitech.png";
 
 const Header: React.FC = () => {
+    const [showHeader, setShowHeader] = useState(true);
+    const [lastScroll, setLastScroll] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll <= 0) {
+                setShowHeader(true);
+            } else if (currentScroll > lastScroll) {
+                setShowHeader(false);
+            } else {
+                setShowHeader(true);
+            }
+
+            setLastScroll(currentScroll);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [lastScroll]);
+
     const scrollToSection = (id: string) => {
         const section = document.getElementById(id);
         if (section) {
@@ -11,7 +33,7 @@ const Header: React.FC = () => {
     };
 
     return (
-        <header className={styles.header}>
+        <header className={`${styles.header} ${!showHeader ? styles.hide : ""}`}>
             <div className={styles.container}>
                 <div className={styles.logoContainer}>
                     <img src={kaitech} alt="KaiTech логотипи" loading="lazy" />

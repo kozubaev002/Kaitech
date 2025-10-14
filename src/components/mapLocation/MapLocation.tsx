@@ -3,7 +3,7 @@ import styles from "./MapLocation.module.scss";
 
 declare global {
   interface Window {
-    DG?: any;
+    ymaps: any;
   }
 }
 
@@ -13,44 +13,6 @@ export const MapLocation: React.FC = () => {
   const [animated, setAnimated] = useState(false);
 
   useEffect(() => {
-    const scriptId = "dg-map-script";
-    const loadScript = () => {
-      return new Promise<void>((resolve, reject) => {
-        if (document.getElementById(scriptId)) {
-          resolve();
-          return;
-        }
-        const script = document.createElement("script");
-        script.id = scriptId;
-        script.src = "https://maps.api.2gis.ru/2.0/loader.js?pkg=full";
-        script.async = true;
-        script.onload = () => resolve();
-        script.onerror = () => reject(new Error("API 2ГИС не удалось загрузить"));
-        document.body.appendChild(script);
-      });
-    };
-
-    const initMap = async () => {
-      if (!window.DG) return;
-      await window.DG;
-
-      const avenirCoordinates: [number, number] = [42.885293, 74.634191];
-      const map = window.DG.map(mapRef.current, { center: avenirCoordinates, zoom: 17 });
-
-      const popupContent = `
-        <div class="${styles.mapPopup}">
-          <header>
-            <h2>Avenir College</h2>
-          </header>
-          <p style="font-size:14px;">ул. Мусы Джалиля 192, Бишкек</p>
-        </div>
-      `;
-
-      window.DG.marker(avenirCoordinates).addTo(map).bindPopup(popupContent).openPopup();
-    };
-
-    loadScript().then(initMap).catch(console.error);
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -60,10 +22,46 @@ export const MapLocation: React.FC = () => {
       },
       { threshold: 0.3 }
     );
+    if (textRef.current) observer.observe(textRef.current);
 
-    if (mapRef.current && textRef.current) {
-      observer.observe(mapRef.current);
-      observer.observe(textRef.current);
+    const scriptId = "yandex-map-script";
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU";
+      script.async = true;
+      document.body.appendChild(script);
+      script.onload = initMap;
+    } else {
+      initMap();
+    }
+
+    function initMap() {
+      if (!window.ymaps || !mapRef.current) return;
+
+      window.ymaps.ready(() => {
+        const coords: [number, number] = [42.885293, 74.634191];
+        const map = new window.ymaps.Map(mapRef.current, {
+          center: coords,
+          zoom: 17,
+          controls: ["zoomControl"],
+        });
+
+        map.behaviors.disable("scrollZoom");
+
+        const placemark = new window.ymaps.Placemark(
+          coords,
+          {
+            balloonContentHeader: "Avenir College",
+            balloonContentBody: "ул. Мусы Джалиля 192, Бишкек",
+          },
+          {
+            preset: "islands#redDotIcon",
+          }
+        );
+
+        map.geoObjects.add(placemark);
+      });
     }
 
     return () => observer.disconnect();
