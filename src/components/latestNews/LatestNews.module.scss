@@ -23,6 +23,7 @@
   transform: translateY(50px);
   transition: all 1s ease;
 
+
   b {
       color: #D86C2C;
   }
@@ -124,6 +125,6 @@
 
 @media (max-width: 500px) {
   .textBlock {
-      font-size: 11px;
+      font-size: 15px;
   }
 }

@@ -5,6 +5,11 @@ import bakaibank from "../../assets/image/bakaibank.png";
 import mbank from "../../assets/image/mbank.png";
 import demirbank from "../../assets/image/demirbank.png";
 import beeline from "../../assets/image/beeline.png";
+import aisoft from "../../assets/image/aisoft.png"
+import Epam from "../../assets/image/epam.png"
+import eqs from "../../assets/image/eqsGroup.png"
+import technology from "../../assets/image/technology.png"
+import Untitled from "../../assets/image/Untitled.png"
 
 const companies = [
     { img: ctechnology, name: "Ctechnology" },
@@ -12,6 +17,11 @@ const companies = [
     { img: mbank, name: "MBank" },
     { img: demirbank, name: "Demir Bank" },
     { img: beeline, name: "Beeline" },
+    { img: aisoft, name: "Aisoft" },
+    { img: Epam, name: "Epam" },
+    { img: eqs, name: "Eqs" },
+    { img: technology, name: "Technology" },
+    { img: Untitled, name: "Untitled" },
 ];
 
 

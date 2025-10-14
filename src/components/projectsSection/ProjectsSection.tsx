@@ -3,10 +3,16 @@ import styles from "./ProjectsSection.module.scss";
 import leftImg from "../../assets/svg/leftImg.svg";
 import rightImg from "../../assets/svg/right.svg";
 
-
 export const ProjectsSection: React.FC = () => {
     const sectionRef = useRef<HTMLElement | null>(null);
     const [isVisible, setIsVisible] = useState(false);
+
+    const scrollToSection = (id: string) => {
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    };
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -44,7 +50,7 @@ export const ProjectsSection: React.FC = () => {
                 loading="lazy"
             />
 
-            <div className={styles.containerr}>
+            <div className={styles.section}>
                 <h3 id="projects-title" className={styles.title} itemProp="headline">
                     100+ реализованных проектов и довольных клиентов
                 </h3>
@@ -53,12 +59,16 @@ export const ProjectsSection: React.FC = () => {
                     <br />
                     Наши продукты помогают ведущим компаниям, а креативные стартапы — важная часть нашей работы.
                 </p>
-                <button
-                    className={styles.btn}
-                    aria-label="Подробнее о реализованных проектах KaiTech"
-                >
-                    Подробнее
-                </button>
+                <li>
+                    <button
+                        className={styles.btn}
+                        aria-label="Подробнее о реализованных проектах KaiTech"
+                        onClick={() => scrollToSection("swiper")}
+                    >
+                        Подробнее
+                    </button>
+                </li>
+
             </div>
             <img
                 className={styles.rightImg}
