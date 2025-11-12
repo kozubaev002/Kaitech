@@ -15,28 +15,6 @@
   }
 }
 
-.members {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 130px;
-  justify-content: center;
-}
-
-.memberCard {
-  max-width: 330px;
-  width: 100%;
-  height: auto;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.6s ease;
-
-  &.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .photo {
   max-width: 330px;
   width: 100%;
@@ -51,12 +29,14 @@
   font-size: 32px;
   font-weight: 400;
   margin: 35px auto 5px;
+  text-align: center;
 }
 
 .role {
   color: var(--primary text, rgba(21, 24, 26, 1));
   font-size: 24px;
   font-weight: 500;
+  text-align: center;
 }
 
 .description {
@@ -83,7 +63,7 @@ a {
   font-size: 18px;
   font-weight: 400;
   display: block;
-  margin: 30px auto 150px;
+  margin: 30px auto 100px;
   cursor: pointer;
   transition: transform 0.2s ease, background 0.2s ease;
   will-change: transform, background;
@@ -106,26 +86,31 @@ a {
   }
 }
 
+.carouselWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; // расстояние между стрелками и каруселью
+  width: 100%;
+}
 
-@media (max-width: 1250px) {
-  .members {
-    gap: 25px 90px;
-  }
+.carousel {
+  overflow: hidden;
+  width: 100%;
+}
 
-  .memberCard {
-    width: 300px;
-  }
+.carouselTrack {
+  display: flex;
+  transition: transform 0.6s ease;
+  gap: 29.5px;
+}
+
+.memberCard {
+  flex: 0 0 calc((100% - 3 * 30px) / 4);
+  box-sizing: border-box;
 }
 
 @media (max-width: 1024px) {
-  .members {
-    gap: 25px 80px;
-  }
-
-  .memberCard {
-    width: 220px;
-  }
-
   .name {
     font-size: 30px;
   }
@@ -140,14 +125,6 @@ a {
 }
 
 @media (max-width: 900px) {
-  .members {
-    gap: 25px 45px;
-  }
-
-  .memberCard {
-    width: 180px;
-  }
-
   .name {
     font-size: 22px;
   }
@@ -159,13 +136,9 @@ a {
 
 @media (max-width: 768px) {
   .title {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500;
-    margin: 50px auto 30px;
-  }
-
-  .memberCard {
-    width: 150px;
+    margin: 50px auto 20px;
   }
 
   .name {
@@ -185,14 +158,6 @@ a {
 }
 
 @media (max-width: 616px) {
-  .members {
-    gap: 25px 20px;
-  }
-
-  .memberCard {
-    width: 130px;
-  }
-
   .name {
     font-size: 14px;
   }
@@ -203,16 +168,20 @@ a {
 }
 
 @media (max-width: 480px) {
-  .memberCard {
-    width: 100px;
-  }
-
   .description {
     font-size: 14px;
+    margin: 30px auto;
   }
 
   .joinButton {
     font-size: 14px;
-    margin: 0 auto 100px;
+    width: 170px;
+    height: 25px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0%;
+    border-radius: 5px;
+    background: var(--main, rgba(216, 108, 44, 1));
+    margin: 0 auto 50px;
   }
 }

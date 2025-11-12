@@ -39,6 +39,7 @@ export const ProjectsSection: React.FC = () => {
             ref={sectionRef}
             className={`${styles.projectsSection} ${isVisible ? styles.visible : ""}`}
             aria-labelledby="projects-title"
+            role="region"
             itemScope
             itemType="https://schema.org/CreativeWork"
         >
@@ -68,8 +69,8 @@ export const ProjectsSection: React.FC = () => {
                         Подробнее
                     </button>
                 </li>
-
             </div>
+
             <img
                 className={styles.rightImg}
                 src={rightImg}

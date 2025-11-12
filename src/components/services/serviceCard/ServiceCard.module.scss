@@ -43,7 +43,7 @@
 @media (max-width: 1024px) {
   .card {
     height: auto;
-    padding: 10px;
+    padding: 0;
   }
 
   .title {
@@ -89,8 +89,10 @@
   }
 
   .description {
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0%;
     text-align: left;
     margin: -10px auto 0;
   }

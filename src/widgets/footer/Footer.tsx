@@ -42,7 +42,12 @@ const Footer: React.FC = () => {
       >
         <div className={`${styles.brand} ${isVisible ? styles.animate : ""}`}>
           <div className={styles.logo}>
-            <img src={kaitech} alt="KaiTech логотипи" loading="lazy" />
+            <img
+              src={kaitech}
+              alt="KaiTech логотипи"
+              loading="lazy"
+              title="Kaitech — образовательная платформа"
+            />
             <span>KaiTech</span>
           </div>
           <div className={styles.social}>
@@ -82,9 +87,9 @@ const Footer: React.FC = () => {
         <nav className={`${styles.nav} ${isVisible ? styles.animate : ""}`}>
           <h2>Информация</h2>
           <ul>
-            <li onClick={() => scrollToSection("banner")}>О нас</li>
-            <li onClick={() => scrollToSection("swiper")}>Наши проекты</li>
-            <li onClick={() => scrollToSection("services")}>Услуги</li>
+            <li onClick={() => scrollToSection("banner")} title="Перейти к разделу О нас">О нас</li>
+            <li onClick={() => scrollToSection("swiper")} title="Перейти к разделу Наши проекты">Наши проекты</li>
+            <li onClick={() => scrollToSection("services")} title="Перейти к разделу Услуги">Услуги</li>
           </ul>
         </nav>
 
@@ -108,9 +113,9 @@ const Footer: React.FC = () => {
           <nav className={`${styles.nav2} ${isVisible ? styles.animate : ""}`}>
             <h2>Информация</h2>
             <ul>
-              <li>О нас</li>
-              <li>Наши проекты</li>
-              <li>Услуги</li>
+              <li onClick={() => scrollToSection("banner")} title="Перейти к разделу О нас">О нас</li>
+              <li onClick={() => scrollToSection("swiper")} title="Перейти к разделу Наши проекты">Наши проекты</li>
+              <li onClick={() => scrollToSection("services")} title="Перейти к разделу Услуги">Услуги</li>
             </ul>
           </nav>
 

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://kaitech.example.com/sitemap.xml
