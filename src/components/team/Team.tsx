@@ -118,8 +118,6 @@
 //         </section>
 //     );
 // };
-
-
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./Team.module.scss";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
@@ -135,14 +133,12 @@ import Arlen from "../../assets/image/Arlen.png";
 import Alima from "../../assets/image/Alima.png";
 import Sary from "../../assets/image/Sary.png";
 import Doni from "../../assets/image/Doni.png";
-
-const placeholder =
-    "https://www.nicepng.com/png/detail/136-1366211_group-of-10-guys-login-user-icon-png.png";
+import Abir from "../../assets/image/Abir.png";
 
 const teamMembers = [
     { id: 1, name: "Cholponbek Esenbekov", role: "Founder", photo: CholponbekEsenbekov },
     { id: 2, name: "Nursultan Ulan uulu", role: "Director", photo: Agai },
-    { id: 3, name: "Aiba Bratan", role: "Project manager", photo: Bratan },
+    { id: 3, name: "Aibarchyn Kadyrbaeva", role: "Project manager", photo: Bratan },
     { id: 4, name: "Elmira Sattorova", role: "Frontend developer", photo: Elmira },
     { id: 5, name: "Kozubaev Jumaniyaz", role: "Frontend developer", photo: Jumaniyaz },
     { id: 6, name: "Islam Kaseiinov", role: "Backend developer", photo: Islam },
@@ -151,110 +147,93 @@ const teamMembers = [
     { id: 9, name: "Alima", role: "UX/UI designer", photo: Alima },
     { id: 10, name: "Saridin Tologon Uulu", role: "Frontend developer", photo: Sary },
     { id: 11, name: "Daniel Maseitov", role: "Frontend developer", photo: Doni },
+    { id: 12, name: "Abiyir Kanybekov", role: "Frontend developer", photo: Abir },
 ];
 
-export const Team: React.FC = () => {
-    const sectionRef = useRef<HTMLDivElement | null>(null);
+export const Team = () => {
+    const trackRef = useRef(null);
+
+    const [visibleCount, setVisibleCount] = useState(4);
+    const [step, setStep] = useState(1);
+
+    // повторяем массив 10 раз → динамически можно больше
+    const infiniteMembers = Array(10)
+        .fill(teamMembers)
+        .flat();
+
     const [currentIndex, setCurrentIndex] = useState(0);
-    const visibleCount = 4; 
+
+    useEffect(() => {
+        const update = () => {
+            const w = window.innerWidth;
+
+            if (w <= 380) {
+                setVisibleCount(2);
+                setStep(2);
+            } else if (w <= 480) {
+                setVisibleCount(3);
+                setStep(3);
+            } else if (w <= 676) {
+                setVisibleCount(3);
+                setStep(3);
+            } else if (w <= 1023) {
+                setVisibleCount(3);
+                setStep(3);
+            } else {
+                setVisibleCount(4);
+                setStep(4);
+            }
+        };
+
+        update();
+        window.addEventListener("resize", update);
+        return () => window.removeEventListener("resize", update);
+    }, []);
 
     const nextSlide = () => {
-        if (currentIndex < teamMembers.length - visibleCount) {
-            setCurrentIndex((prev) => prev + 1);
-        }
+        setCurrentIndex(prev => prev + step);
     };
 
     const prevSlide = () => {
-        if (currentIndex > 0) {
-            setCurrentIndex((prev) => prev - 1);
-        }
+        setCurrentIndex(prev => (prev > 0 ? prev - step : 0));
     };
 
-    useEffect(() => {
-        const section = sectionRef.current;
-        const elements = section?.querySelectorAll(
-            `.${styles.memberCard}, .${styles.description}, .${styles.joinButton}, .${styles.title}`
-        );
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add(styles.visible);
-                    }
-                });
-            },
-            { threshold: 0.2 }
-        );
-
-        elements?.forEach((el) => observer.observe(el));
-        return () => observer.disconnect();
-    }, []);
-
     return (
-        <section className={styles.teamSection} aria-label="Наша команда">
-            <div className="container" ref={sectionRef}>
+        <section className={styles.teamSection}>
+            <div className="container">
                 <h2 className={styles.title}>Наша команда</h2>
 
                 <div className={styles.carouselWrapper}>
-                    <GoChevronLeft
-                        style={{ cursor: "pointer", color: " rgba(216, 108, 44, 1)" }}
-                        size={50}
-                        className={`${styles.arrow} ${currentIndex === 0 ? styles.disabled : ""}`}
-                        onClick={prevSlide}
-                    />
+                    <GoChevronLeft className={styles.arrow} size={40} onClick={prevSlide} />
 
                     <div className={styles.carousel}>
                         <div
                             className={styles.carouselTrack}
+                            ref={trackRef}
                             style={{
-                                transform: `translateX(-${currentIndex * ((100 + (30 / (1400 / 100))) / visibleCount)
-                                    }%)`,
+                                transform: `translateX(-${(currentIndex * 100) / visibleCount}%)`,
+                                transition: "transform 0.7s ease"
                             }}
                         >
-                            {teamMembers.map((member) => (
-                                <article
-                                    key={member.id}
-                                    className={styles.memberCard}
-                                    aria-label={`${member.name} — ${member.role}`}
-                                >
-                                    <img
-                                        src={member.photo || placeholder}
-                                        alt={`${member.name} - ${member.role}`}
-                                        className={styles.photo}
-                                        loading="lazy"
-                                    />
+                            {infiniteMembers.map((member, index) => (
+                                <div key={index} className={styles.memberCard}>
+                                    <img src={member.photo} alt={member.name} className={styles.photo} />
                                     <h3 className={styles.name}>{member.name}</h3>
                                     <p className={styles.role}>{member.role}</p>
-                                </article>
+                                </div>
                             ))}
                         </div>
                     </div>
 
-                    <GoChevronRight
-                        size={50}
-                        style={{ cursor: "pointer", color: " rgba(216, 108, 44, 1)" }}
-                        className={`${styles.arrow} ${currentIndex >= teamMembers.length - visibleCount ? styles.disabled : ""
-                            }`}
-                        onClick={nextSlide}
-                    />
+                    <GoChevronRight className={styles.arrow} size={40} onClick={nextSlide} />
                 </div>
 
                 <p className={styles.description}>
                     Присоединяйтесь к нашему профессиональному сообществу, где ценятся развитие и обучение.
-                    Мы предлагаем стажировки и поддержку в трудоустройстве — уже помогли десяткам людей
-                    построить успешную карьеру с KaiTech. Теперь очередь за вами!
                 </p>
 
-                <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://instagram.com/kaitech_it"
-                    aria-label="Instagram KaiTech"
-                >
-                    <button type="button" className={styles.joinButton}>
-                        Подробнее
-                    </button>
+                <a href="https://instagram.com/kaitech_it" target="_blank">
+                    <button className={styles.joinButton}>Подробнее</button>
                 </a>
             </div>
         </section>
