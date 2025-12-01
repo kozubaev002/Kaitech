@@ -3,7 +3,7 @@ import styles from "./Wave.module.scss";
 
 const Wave: React.FC = () => {
   return (
-    <div className={styles.waveContainer}>
+    <div className={styles.waveContainer} aria-hidden="true">
       <svg
         viewBox="0 0 1240 400"
         preserveAspectRatio="none"

@@ -68,19 +68,31 @@ export const MapLocation: React.FC = () => {
   }, []);
 
   return (
-    <section className="container" aria-label="Расположение Avenir College">
+    <section
+      className="container"
+      aria-label="Расположение Avenir College"
+      role="region"
+      itemScope
+      itemType="https://schema.org/Place"
+    >
       <h1
         ref={textRef}
         className={`${styles.title} ${animated ? styles.animated : ""}`}
+        itemProp="name"
       >
         Наше местоположение
       </h1>
       <div
         ref={mapRef}
         className={`${styles.mapContainer} ${animated ? styles.animated : ""}`}
-        role="region"
         aria-label="Карта Avenir College"
-      ></div>
+        itemProp="geo"
+        itemScope
+        itemType="https://schema.org/GeoCoordinates"
+      >
+        <meta itemProp="latitude" content="42.885293" />
+        <meta itemProp="longitude" content="74.634191" />
+      </div>
     </section>
   );
 };

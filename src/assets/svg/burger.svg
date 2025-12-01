@@ -1,0 +1,6 @@
+<svg viewBox="0 0 22 15" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22.000000" height="15.000000" fill="none" customFrame="#000000">
+	<rect id="Burger" width="22.000000" height="15.000000" x="0.000000" y="0.000000" />
+	<path id="Line 21" d="M4 13.5L21 13.5" stroke="rgb(21,24,26)" stroke-linecap="round" stroke-width="2" />
+	<path id="Line 22" d="M1 7.5L18 7.5" stroke="rgb(21,24,26)" stroke-linecap="round" stroke-width="2" />
+	<path id="Line 23" d="M4 1.5L21 1.5" stroke="rgb(21,24,26)" stroke-linecap="round" stroke-width="2" />
+</svg>

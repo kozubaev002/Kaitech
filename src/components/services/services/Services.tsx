@@ -62,6 +62,9 @@ export const Services: React.FC = () => {
             <section
                 className={styles.servicesSection}
                 aria-labelledby="services-title"
+                role="region"
+                itemScope
+                itemType="https://schema.org/ItemList" 
             >
                 <div className={styles.servicesContainer}>
                     <h2

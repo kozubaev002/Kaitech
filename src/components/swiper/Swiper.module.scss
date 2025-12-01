@@ -70,17 +70,18 @@
 
 @media (max-width: 1024px) {
   .overlayText {
-    font-size: 18px;
+    font-size: 14px;
+    font-weight: 800;
     height: 100px;
   }
 }
 
 @media (max-width: 768px) {
   .overlayText {
-    font-size: 11px;
+    font-size: 9px;
     padding: 8px;
     height: 70px;
-    font-weight: 400;
+    font-weight: 600;
   }
 }
 
@@ -96,6 +97,7 @@
   }
 
   .overlayText {
-    font-size: 10px;
+    font-size: 8px;
+    font-weight: 600;
   }
 }

@@ -32,7 +32,11 @@ const Banner: React.FC = () => {
           key={index}
           className={`${styles.image} ${index === activeIndex ? styles.active : ''}`}
         >
-          <img src={img} alt={`banner ${index + 1}`} />
+          <img
+            src={img}
+            alt={`Баннер Kaitech ${index + 1}`}
+            title={`Баннер Kaitech ${index + 1}`}
+            loading="lazy" />
         </div>
       ))}
       <div className={styles.cloudBox}></div>

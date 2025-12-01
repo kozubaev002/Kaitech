@@ -14,10 +14,14 @@ export const ServiceCard: React.FC<Props> = ({ icon, title, description, isVisib
         <div
             className={`${styles.card} ${isVisible ? styles.visibleCard : ""}`}
             style={style}
+            role="article"
+            aria-label={title}
+            itemScope
+            itemType="https://schema.org/Service"
         >
-            <h3 className={styles.title}>{title}</h3>
-            <img src={icon} alt={title} className={styles.icon} />
-            <p className={styles.description}>{description}</p>
+            <h3 className={styles.title} itemProp="name">{title}</h3>
+            <img src={icon} alt={title} className={styles.icon} itemProp="image" />
+            <p className={styles.description} itemProp="description">{description}</p>
         </div>
     );
 };

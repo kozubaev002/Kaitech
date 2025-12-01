@@ -54,7 +54,7 @@ export const LatestNews: React.FC = () => {
         }, 8000);
 
         return () => clearInterval(interval);
-    }, [dataSets.length]); 
+    }, [dataSets.length]);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -71,28 +71,33 @@ export const LatestNews: React.FC = () => {
         if (textRef.current) observerText.observe(textRef.current);
 
         return () => {
-             if (titleRef.current) observer.unobserve(titleRef.current);
-             if (textRef.current) observerText.unobserve(textRef.current);
+            if (titleRef.current) observer.unobserve(titleRef.current);
+            if (textRef.current) observerText.unobserve(textRef.current);
         };
     }, []);
 
     return (
-        <div className="container">
+        <section
+            className="container"
+            aria-label="Последние новости Kaitech"
+            role="region"
+            itemScope
+            itemType="https://schema.org/NewsArticle"
+        >
             <h2
+                id="latest-news-title"
                 ref={titleRef}
                 className={`${styles.title} ${titleActive ? styles.active : ""}`}
+                itemProp="headline"
             >
                 Последние новости
             </h2>
 
-            <div className={styles.wrapper}>
+            <div className={styles.wrapper} ref={textRef} itemProp="articleBody">
                 <Swiper
                     grabCursor
                     loop
-                    autoplay={{
-                        delay: 1000, 
-                        disableOnInteraction: false,
-                    }}
+                    autoplay={{ delay: 1000, disableOnInteraction: false }}
                     speed={1000}
                     modules={[Autoplay]}
                     className={styles.mySwiper}
@@ -101,22 +106,24 @@ export const LatestNews: React.FC = () => {
                     {dataSets[setIndex].images.map((img, index) => (
                         <SwiperSlide
                             key={index}
-                            className={`${styles.slide} ${textTransition ? styles.slideIn : styles.slideOut
-                                }`}
+                            className={`${styles.slide} ${textTransition ? styles.slideIn : styles.slideOut}`}
                         >
-                            <img src={img} alt={`Slide ${index + 1}`} loading="lazy" />
+                            <img
+                                src={img}
+                                alt={`Новости KaiTech - слайд ${index + 1}`}
+                                loading="lazy"
+                                itemProp="image"
+                            />
                         </SwiperSlide>
                     ))}
                 </Swiper>
 
                 <div
-                    ref={textRef}
-                    className={`${styles.textBlock} ${textActive ? styles.active : ""} ${textTransition ? styles.fadeIn : styles.fadeOut
-                        }`}
+                    className={`${styles.textBlock} ${textActive ? styles.active : ""} ${textTransition ? styles.fadeIn : styles.fadeOut}`}
                 >
                     <p>{dataSets[setIndex].text}</p>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };

@@ -55,7 +55,10 @@ const CompanyKgz: React.FC = () => {
             <section
                 ref={sectionRef}
                 className={`${styles.companiesSection} ${visible ? styles.visible : ""}`}
-                aria-label="Наши успешные стажеры"
+                aria-label="Наши успешные стажеры в топовых компаниях Кыргызстана"
+                role="region"
+                itemScope
+                itemType="https://schema.org/Organization"
             >
                 <h2>
                     <span>Наши успешные стажеры</span> работают в топовых компаниях Кыргызстана
@@ -71,8 +74,17 @@ const CompanyKgz: React.FC = () => {
                         style={{ animationPlayState: paused ? "paused" : "running" }}
                     >
                         {companies.concat(companies).map((company, idx) => (
-                            <div key={idx} className={styles.logoBox}>
-                                <img src={company.img} alt={`${company.name} logo`} loading="lazy" />
+                            <div
+                                key={idx}
+                                className={styles.logoBox}
+                                itemProp="member" 
+                            >
+                                <img
+                                    src={company.img}
+                                    alt={`${company.name} logo`}
+                                    loading="lazy"
+                                    itemProp="logo" 
+                                />
                             </div>
                         ))}
                     </div>

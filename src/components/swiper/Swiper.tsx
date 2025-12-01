@@ -55,16 +55,22 @@ const SwiperDemo: React.FC = () => {
                     <Swiper
                         autoplay={{ delay: 2500, disableOnInteraction: false }}
                         modules={[Autoplay]}
-                        slidesPerView={1.6}
+                        slidesPerView={1.9}
                         spaceBetween={20}
                         centeredSlides
                         loop
                         speed={1500}
+                        aria-label="Слайдер проектов Kaitech"
                     >
                         {images.map((img, idx) => (
                             <SwiperSlide key={idx}>
                                 <div className={styles.slide}>
-                                    <img src={img} alt={`Project ${idx + 1}`} />
+                                    <img
+                                        src={img}
+                                        alt={`Project ${idx + 1}`}
+                                        title={`Проект ${idx + 1}`}
+                                        loading="lazy"
+                                    />
                                     <div className={styles.overlayText}>
                                         <p>{texts[idx]}</p>
                                     </div>

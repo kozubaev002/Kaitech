@@ -51,6 +51,10 @@ const ContactForm: React.FC = () => {
             <section
                 className={`${styles.contactSection} ${visible ? styles.visible : ""}`}
                 ref={formRef}
+                aria-labelledby="contact-title"
+                role="form"
+                itemScope
+                itemType="https://schema.org/ContactPage"
             >
                 <div className={styles.info}>
                     <p className={styles.title}>Оставьте данные и мы свяжемся с Вами</p>
@@ -60,10 +64,14 @@ const ContactForm: React.FC = () => {
                         <li>Подключим необходимые интеграции</li>
                         <li>Тех поддержка</li>
                     </ul>
+                    <p className={styles.title}>Наши чаты</p>
+                    <p className={styles.text}>Вы можете также отправлять сообщения в наши мессенджеры</p>
                 </div>
 
-                <form className={styles.form} onSubmit={handleSubmit}>
-                    <h2 className={styles.formTitle}>Связаться с нами</h2>
+                <form className={styles.form} onSubmit={handleSubmit} itemProp="contactPoint">
+                    <h2 id="contact-title" className={styles.formTitle}>
+                        Связаться с нами
+                    </h2>
 
                     <input
                         type="text"
@@ -73,16 +81,19 @@ const ContactForm: React.FC = () => {
                         required
                         placeholder="Ваше имя"
                         aria-label="Ваше имя"
+                        itemProp="name"
                     />
 
                     <PhoneInput
-                        country={""}
+                        country={"kg"}
                         value={phone}
                         onChange={setPhone}
                         enableSearch={true}
                         inputProps={{
                             name: "phone",
                             required: true,
+                            "aria-label": "Номер телефона",
+                            itemProp: "telephone",
                         }}
                         placeholder="Номер телефона"
                         containerClass={styles.phoneContainer}
@@ -98,16 +109,21 @@ const ContactForm: React.FC = () => {
                         required
                         placeholder="Ваше сообщение"
                         aria-label="Ваше сообщение"
+                        itemProp="description"
                     />
 
                     <p style={{ fontSize: "0.9rem", color: "#555" }}>
                         Слов: {message.trim().split(/\s+/).filter(Boolean).length}/150
                     </p>
 
-                    <button aria-label="Отправить" type="submit">Отправить</button>
+                    <button aria-label="Отправить" type="submit" itemProp="action">
+                        Отправить
+                    </button>
                 </form>
             </section>
         </div>
+
+
     );
 };
 
