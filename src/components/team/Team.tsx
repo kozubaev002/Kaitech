@@ -118,7 +118,7 @@
 //         </section>
 //     );
 // };
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Team.module.scss";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 
@@ -135,7 +135,7 @@ import Sary from "../../assets/image/Sary.png";
 import Doni from "../../assets/image/Doni.png";
 import Abir from "../../assets/image/Abir.png";
 
-const teamMembers = [
+const baseMembers = [
     { id: 1, name: "Cholponbek Esenbekov", role: "Founder", photo: CholponbekEsenbekov },
     { id: 2, name: "Nursultan Ulan uulu", role: "Director", photo: Agai },
     { id: 3, name: "Aibarchyn Kadyrbaeva", role: "Project manager", photo: Bratan },
@@ -150,18 +150,13 @@ const teamMembers = [
     { id: 12, name: "Abiyir Kanybekov", role: "Frontend developer", photo: Abir },
 ];
 
+// ❗ УМНОЖАЕМ массив × 100, чтобы он был реально бесконечный
+const infiniteList = Array(100).fill(baseMembers).flat();
+
 export const Team = () => {
-    const trackRef = useRef(null);
-
     const [visibleCount, setVisibleCount] = useState(4);
-    const [step, setStep] = useState(1);
-
-    // повторяем массив 10 раз → динамически можно больше
-    const infiniteMembers = Array(10)
-        .fill(teamMembers)
-        .flat();
-
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [step, setStep] = useState(4);
+    const [index, setIndex] = useState(0);
 
     useEffect(() => {
         const update = () => {
@@ -170,13 +165,10 @@ export const Team = () => {
             if (w <= 380) {
                 setVisibleCount(2);
                 setStep(2);
-            } else if (w <= 480) {
-                setVisibleCount(3);
-                setStep(3);
             } else if (w <= 676) {
                 setVisibleCount(3);
                 setStep(3);
-            } else if (w <= 1023) {
+            } else if (w <= 1024) {
                 setVisibleCount(3);
                 setStep(3);
             } else {
@@ -191,11 +183,11 @@ export const Team = () => {
     }, []);
 
     const nextSlide = () => {
-        setCurrentIndex(prev => prev + step);
+        setIndex((prev) => prev + step);
     };
 
     const prevSlide = () => {
-        setCurrentIndex(prev => (prev > 0 ? prev - step : 0));
+        setIndex((prev) => (prev - step < 0 ? 0 : prev - step));
     };
 
     return (
@@ -209,15 +201,14 @@ export const Team = () => {
                     <div className={styles.carousel}>
                         <div
                             className={styles.carouselTrack}
-                            ref={trackRef}
                             style={{
-                                transform: `translateX(-${(currentIndex * 100) / visibleCount}%)`,
-                                transition: "transform 0.7s ease"
+                                transform: `translateX(-${(index * 100) / visibleCount}%)`,
+                                transition: "transform 0.6s ease"
                             }}
                         >
-                            {infiniteMembers.map((member, index) => (
-                                <div key={index} className={styles.memberCard}>
-                                    <img src={member.photo} alt={member.name} className={styles.photo} />
+                            {infiniteList.map((member, i) => (
+                                <div key={i} className={styles.memberCard}>
+                                    <img src={member.photo} className={styles.photo} />
                                     <h3 className={styles.name}>{member.name}</h3>
                                     <p className={styles.role}>{member.role}</p>
                                 </div>
@@ -227,15 +218,8 @@ export const Team = () => {
 
                     <GoChevronRight className={styles.arrow} size={40} onClick={nextSlide} />
                 </div>
-
-                <p className={styles.description}>
-                    Присоединяйтесь к нашему профессиональному сообществу, где ценятся развитие и обучение.
-                </p>
-
-                <a href="https://instagram.com/kaitech_it" target="_blank">
-                    <button className={styles.joinButton}>Подробнее</button>
-                </a>
             </div>
         </section>
     );
 };
+
